@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dq3qb64ts1nsd"]
+[gd_scene load_steps=17 format=3 uid="uid://dq3qb64ts1nsd"]
 
 [ext_resource type="Texture2D" uid="uid://cap1slwqblunl" path="res://Textures/grass.tres" id="1_o5kri"]
 [ext_resource type="PackedScene" uid="uid://d32epd17r5fkh" path="res://Scenes/player.tscn" id="2_6f40u"]
@@ -6,6 +6,25 @@
 
 [sub_resource type="Environment" id="Environment_jh0a1"]
 background_mode = 1
+
+[sub_resource type="GDScript" id="GDScript_61om2"]
+resource_name = "WorldEnviroment"
+script/source = "extends WorldEnvironment
+
+
+@export var Enable : bool = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	if Enable == false:
+		set_environment(null)
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [sub_resource type="Gradient" id="Gradient_ljefr"]
 colors = PackedColorArray(0, 1, 0, 1, 0.559814, 0.275912, 0.223933, 1)
@@ -57,10 +76,54 @@ data = PackedVector3Array(-1, 0.07, 1, -1, 0, 1, -1, 0.07, -1, -1, 0.07, -1, -1,
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hcbdw"]
 data = PackedVector3Array(-1, 0.07, 1, -1, 0, 1, -1, 0.07, -1, -1, 0.07, -1, -1, 0, 1, -1, 0, -1, 0.93, 0.1, -1, 1, 0.1, -1, 0.93, 0.1, 1, 0.93, 0.1, 1, 1, 0.1, -1, 1, 0.1, 1, 1, 0.07, -1, 1, 0, -1, 1, 0.07, 1, 1, 0.07, 1, 1, 0, -1, 1, 0, 1, -0.9, 0.07, -1, -1, 0.07, -1, -0.9, 0, -1, -0.9, 0, -1, -1, 0.07, -1, -1, 0, -1, 0.9, 0.07, 1, 1, 0.07, 1, 0.9, 0, 1, 0.9, 0, 1, 1, 0.07, 1, 1, 0, 1, 0.9, 0.07, -1, 1, 0.07, -1, 0.93, 0.1, -1, 0.93, 0.1, -1, 1, 0.07, -1, 1, 0.1, -1, -0.9, 0.07, -1, -0.9, 0.07, 1, -0.93, 0.1, -1, -0.93, 0.1, -1, -0.9, 0.07, 1, -0.93, 0.1, 1, -1, 0.07, -1, -0.9, 0.07, -1, -1, 0.1, -1, -1, 0.1, -1, -0.9, 0.07, -1, -0.93, 0.1, -1, 0.9, 0, 1, 0.9, 0, -1, -0.9, 0, 1, -0.9, 0, 1, 0.9, 0, -1, -0.9, 0, -1, -0.9, 0.07, 1, 0.9, 0.07, 1, -0.9, 0, 1, -0.9, 0, 1, 0.9, 0.07, 1, 0.9, 0, 1, -0.9, 0, -1, -1, 0, -1, -0.9, 0, 1, -0.9, 0, 1, -1, 0, -1, -1, 0, 1, 1, 0, -1, 0.9, 0, -1, 1, 0, 1, 1, 0, 1, 0.9, 0, -1, 0.9, 0, 1, 0.9, 0.07, -1, -0.9, 0.07, -1, 0.9, 0, -1, 0.9, 0, -1, -0.9, 0.07, -1, -0.9, 0, -1, -0.9, 0.07, 1, -0.9, 0, 1, -1, 0.07, 1, -1, 0.07, 1, -0.9, 0, 1, -1, 0, 1, 0.9, 0.07, -1, 0.9, 0, -1, 1, 0.07, -1, 1, 0.07, -1, 0.9, 0, -1, 1, 0, -1, -0.9, 0.07, 1, -1, 0.07, 1, -0.93, 0.1, 1, -0.93, 0.1, 1, -1, 0.07, 1, -1, 0.1, 1, -1, 0.1, -1, -0.93, 0.1, -1, -1, 0.1, 1, -1, 0.1, 1, -0.93, 0.1, -1, -0.93, 0.1, 1, 1, 0.07, -1, 1, 0.07, 1, 1, 0.1, -1, 1, 0.1, -1, 1, 0.07, 1, 1, 0.1, 1, 0.9, 0.07, 1, 0.9, 0.07, -1, 0.93, 0.1, 1, 0.93, 0.1, 1, 0.9, 0.07, -1, 0.93, 0.1, -1, -1, 0.07, 1, -1, 0.07, -1, -1, 0.1, 1, -1, 0.1, 1, -1, 0.07, -1, -1, 0.1, -1, 1, 0.1, 1, 1, 0.07, 1, 0.93, 0.1, 1, 0.93, 0.1, 1, 1, 0.07, 1, 0.9, 0.07, 1, 0.9, 0.07, -1, 0.9, 0.07, 1, -0.9, 0.07, -1, -0.9, 0.07, -1, 0.9, 0.07, 1, -0.9, 0.07, 1, 0.02, 0.073, -0.9, 0.02, 0.073, -0.7, -0.02, 0.073, -0.9, -0.02, 0.073, -0.9, 0.02, 0.073, -0.7, -0.02, 0.073, -0.7, -0.58, 0.073, -1, -0.58, 0.073, 1, -0.62, 0.073, -1, -0.62, 0.073, -1, -0.58, 0.073, 1, -0.62, 0.073, 1, 0.62, 0.073, -1, 0.62, 0.073, 1, 0.58, 0.073, -1, 0.58, 0.073, -1, 0.62, 0.073, 1, 0.58, 0.073, 1, 0.02, 0.073, -0.5, 0.02, 0.073, -0.3, -0.02, 0.073, -0.5, -0.02, 0.073, -0.5, 0.02, 0.073, -0.3, -0.02, 0.073, -0.3, 0.02, 0.073, -0.1, 0.02, 0.073, 0.1, -0.02, 0.073, -0.1, -0.02, 0.073, -0.1, 0.02, 0.073, 0.1, -0.02, 0.073, 0.1, 0.02, 0.073, 0.3, 0.02, 0.073, 0.5, -0.02, 0.073, 0.3, -0.02, 0.073, 0.3, 0.02, 0.073, 0.5, -0.02, 0.073, 0.5, 0.02, 0.073, 0.7, 0.02, 0.073, 0.9, -0.02, 0.073, 0.7, -0.02, 0.073, 0.7, 0.02, 0.073, 0.9, -0.02, 0.073, 0.9)
 
+[sub_resource type="GDScript" id="GDScript_lmhw6"]
+resource_name = "Trees"
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	randomize()
+	
+	
+	var numTree = 2
+	for n in range(1,numTree+1):
+		print_debug(n)
+		var tree = get_node(\"Tree\" + str(n))
+		print_debug(tree)
+		var rand = randi() % 5+1
+		var TreeLoad = preload(\"res://Models/Trees/dead_trees.tscn\")
+		
+		var TreeInst = TreeLoad.instantiate()
+		
+		var TreeNode = TreeInst.get_node(\"DeadTree\"+str(rand))
+		print_debug(TreeInst)
+		print_debug(TreeNode)
+		
+		var msh = MeshInstance3D.new()
+		msh.mesh = TreeNode.get_mesh()
+		print_debug(TreeNode.get_mesh())
+		print_debug(tree.get_children())
+		
+		tree.add_child.call_deferred(msh)
+		print_debug(tree.get_children())
+		#tree.get_child(0).free()	
+
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+"
+
 [node name="Level1" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jh0a1")
+script = SubResource("GDScript_61om2")
 
 [node name="Grass" type="MeshInstance3D" parent="."]
 transform = Transform3D(1000, 0, 0, 0, 10, 0, 0, 0, 1000, 0, -0.5, 0)
@@ -73,40 +136,175 @@ visible = false
 shape = SubResource("ConcavePolygonShape3D_sfflw")
 
 [node name="Player" parent="." instance=ExtResource("2_6f40u")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -8.91543, 1.02842, 1.09854)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -8.91543, 1.02842, 6.18004)
 
-[node name="RoadStraight" type="MeshInstance3D" parent="."]
+[node name="Road" type="Node3D" parent="."]
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, 0)
 mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoadStraight"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadStraight/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_k1wbo")
 
-[node name="RoadStraight2" type="MeshInstance3D" parent="."]
+[node name="RoadStraight2" type="MeshInstance3D" parent="Road"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -10)
 mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoadStraight2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadStraight2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_3v1l2")
 
-[node name="RoadStraight3" type="MeshInstance3D" parent="."]
+[node name="RoadStraight3" type="MeshInstance3D" parent="Road"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -20)
 mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoadStraight3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadStraight3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_qiwh8")
 
-[node name="RoadStraight4" type="MeshInstance3D" parent="."]
+[node name="RoadStraight4" type="MeshInstance3D" parent="Road"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -30)
 mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoadStraight4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadStraight4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight4/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_hcbdw")
+
+[node name="RoadStraight5" type="MeshInstance3D" parent="Road"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -40)
+mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hcbdw")
+
+[node name="RoadStraight6" type="MeshInstance3D" parent="Road"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -50)
+mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hcbdw")
+
+[node name="RoadStraight7" type="MeshInstance3D" parent="Road"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -60)
+mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hcbdw")
+
+[node name="RoadStraight8" type="MeshInstance3D" parent="Road"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -70)
+mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hcbdw")
+
+[node name="RoadStraight9" type="MeshInstance3D" parent="Road"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -80)
+mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight9/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k1wbo")
+
+[node name="RoadStraight10" type="MeshInstance3D" parent="Road"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -90)
+mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight10/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_3v1l2")
+
+[node name="RoadStraight11" type="MeshInstance3D" parent="Road"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -100)
+mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight11/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qiwh8")
+
+[node name="RoadStraight12" type="MeshInstance3D" parent="Road"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -110)
+mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight12/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hcbdw")
+
+[node name="RoadStraight13" type="MeshInstance3D" parent="Road"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -120)
+mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight13/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hcbdw")
+
+[node name="RoadStraight14" type="MeshInstance3D" parent="Road"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -130)
+mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight14/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hcbdw")
+
+[node name="RoadStraight15" type="MeshInstance3D" parent="Road"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -140)
+mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight15/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hcbdw")
+
+[node name="RoadStraight16" type="MeshInstance3D" parent="Road"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.8, -150)
+mesh = ExtResource("3_trnmo")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Road/RoadStraight16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadStraight16/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hcbdw")
+
+[node name="Trees" type="Node3D" parent="."]
+script = SubResource("GDScript_lmhw6")
+
+[node name="Tree1" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.5, 0)
+
+[node name="Tree2" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -6)
