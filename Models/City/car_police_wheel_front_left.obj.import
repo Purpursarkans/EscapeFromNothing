@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dj27e4nqwnkkm"
+path="res://.godot/imported/car_police_wheel_front_left.obj-eb47b9d98963548b4fab93b3b7899af7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/car_police_wheel_front_left.obj-eb47b9d98963548b4fab93b3b7899af7.mesh"]
+
+source_file="res://Models/City/car_police_wheel_front_left.obj"
+dest_files=["res://.godot/imported/car_police_wheel_front_left.obj-eb47b9d98963548b4fab93b3b7899af7.mesh", "res://.godot/imported/car_police_wheel_front_left.obj-eb47b9d98963548b4fab93b3b7899af7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

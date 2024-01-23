@@ -1,0 +1,111 @@
+[gd_scene load_steps=3 format=3 uid="uid://d32epd17r5fkh"]
+
+[sub_resource type="GDScript" id="GDScript_27n43"]
+resource_name = "Player"
+script/source = "extends CharacterBody3D
+
+const mix_view = -PI/2
+const max_view = PI/2
+
+var rot_x = 0
+var rot_y = 0
+
+var RotateSpeed = 0.001
+
+
+const JUMP_VELOCITY = 4.5
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting(\"physics/3d/default_gravity\")
+
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+var action_object = null
+
+func action():
+	print_debug($Head/RayCast3D.get_collider())
+	action_object = $Head/RayCast3D.get_collider()
+	if action_object != null:
+		print_debug(action_object.name,\" Click\")
+		if action_object.name == \"Door\":
+			action_object.open()
+
+func _physics_process(delta):
+	
+	var SPEED = 5.0
+	const SPEED_UP = 2
+	
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+
+	# Handle Jump.
+	if Input.is_action_just_pressed(\"move_space\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+	
+	if Input.is_action_pressed(\"move_speed_up\"):
+		SPEED *= SPEED_UP
+	
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var input_dir = Input.get_vector(\"move_left\", \"move_right\", \"move_up\", \"move_down\")
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+
+	move_and_slide()
+	
+
+func _input(e):
+	if e is InputEventMouseMotion:
+		rot_x -= e.relative.y * RotateSpeed
+		rot_y = -e.relative.x * RotateSpeed
+		
+		#transform.basis = Basis(Vector3(0,1,0), rot_y) * transform.basis
+		transform.basis = transform.basis.rotated(Vector3(0,1,0), rot_y)
+		
+		if rot_x <= max_view && rot_x >= mix_view:
+			$Head.transform.basis = Basis(Vector3(1,0,0), rot_x)
+
+		if rot_x > max_view: rot_x = max_view
+		elif rot_x < mix_view: rot_x = mix_view
+		
+	if e is InputEventMouse:
+		if e.is_pressed():
+			action()
+
+
+"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r4yr8"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_snap_length = 0.0
+script = SubResource("GDScript_27n43")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_r4yr8")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.874933, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Head"]
+transform = Transform3D(0.05, 0, 0, 0, -1.74846e-07, -0.05, 0, 4, -2.18557e-09, 0, 0, 0)
+collide_with_areas = true
+debug_shape_custom_color = Color(0, 0.4, 0.266667, 1)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+current = true
+size = 5.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head"]
+spot_range = 12.9016
+spot_angle = 39.1463

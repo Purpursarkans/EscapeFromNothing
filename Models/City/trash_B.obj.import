@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://byppy8mfj5tpd"
+path="res://.godot/imported/trash_B.obj-6fcb4ad2b941d6a7f8b973224b652305.mesh"
+
+[deps]
+
+files=["res://.godot/imported/trash_B.obj-6fcb4ad2b941d6a7f8b973224b652305.mesh"]
+
+source_file="res://Models/City/trash_B.obj"
+dest_files=["res://.godot/imported/trash_B.obj-6fcb4ad2b941d6a7f8b973224b652305.mesh", "res://.godot/imported/trash_B.obj-6fcb4ad2b941d6a7f8b973224b652305.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

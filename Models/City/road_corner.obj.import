@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bemj5bwmwfm82"
+path="res://.godot/imported/road_corner.obj-f68e6ad4ec4fc22709e21a0c339cca2b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road_corner.obj-f68e6ad4ec4fc22709e21a0c339cca2b.mesh"]
+
+source_file="res://Models/City/road_corner.obj"
+dest_files=["res://.godot/imported/road_corner.obj-f68e6ad4ec4fc22709e21a0c339cca2b.mesh", "res://.godot/imported/road_corner.obj-f68e6ad4ec4fc22709e21a0c339cca2b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
