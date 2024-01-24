@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://d32epd17r5fkh"]
+[gd_scene load_steps=4 format=3 uid="uid://d32epd17r5fkh"]
+
+[ext_resource type="AudioStream" uid="uid://djkqaet2df28a" path="res://снег.ogg" id="1_i1kjt"]
 
 [sub_resource type="GDScript" id="GDScript_27n43"]
 resource_name = "Player"
@@ -54,9 +56,12 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		$Audio/AudioPlayer.stream_paused = false
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		$Audio/AudioPlayer.stream_paused = true
 
 	move_and_slide()
 	
@@ -80,6 +85,11 @@ func _input(e):
 			action()
 
 
+
+
+func _on_audio_player_finished():
+	$Audio/AudioPlayer.playing = true
+	pass # Replace with function body.
 "
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r4yr8"]
@@ -109,3 +119,12 @@ size = 5.0
 [node name="SpotLight3D" type="SpotLight3D" parent="Head"]
 spot_range = 12.9016
 spot_angle = 39.1463
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("1_i1kjt")
+volume_db = 1.0
+autoplay = true
+
+[connection signal="finished" from="Audio/AudioPlayer" to="." method="_on_audio_player_finished"]
