@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://cinvp221d416r"]
+
+[ext_resource type="ArrayMesh" uid="uid://bkflw5tj7oarr" path="res://Models/City/building_A_withoutBase.obj" id="1_w3yke"]
+[ext_resource type="ArrayMesh" uid="uid://2ei6upegvemr" path="res://Models/City/building_B_withoutBase.obj" id="2_ee4e7"]
+[ext_resource type="ArrayMesh" uid="uid://d4j1n28w3ifb7" path="res://Models/City/building_C_withoutBase.obj" id="3_nx782"]
+[ext_resource type="ArrayMesh" uid="uid://4g7151mvw75m" path="res://Models/City/building_D_withoutBase.obj" id="4_l2c47"]
+[ext_resource type="ArrayMesh" uid="uid://lmo8gtornuss" path="res://Models/City/building_E_withoutBase.obj" id="5_yduv4"]
+[ext_resource type="ArrayMesh" uid="uid://w6rwufweumic" path="res://Models/City/building_F_withoutBase.obj" id="6_w1pvi"]
+[ext_resource type="ArrayMesh" uid="uid://cs3rvcrov8htn" path="res://Models/City/building_G_withoutBase.obj" id="7_ymdrp"]
+[ext_resource type="ArrayMesh" uid="uid://da61p64sdls0i" path="res://Models/City/building_H_withoutBase.obj" id="8_wwerh"]
+
+[node name="Buildings" type="Node3D"]
+
+[node name="Building1" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_w3yke")
+skeleton = NodePath("../..")
+
+[node name="Building2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = ExtResource("2_ee4e7")
+skeleton = NodePath("../..")
+
+[node name="Building3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+mesh = ExtResource("3_nx782")
+skeleton = NodePath("../..")
+
+[node name="Building4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+mesh = ExtResource("4_l2c47")
+skeleton = NodePath("../..")
+
+[node name="Building5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+mesh = ExtResource("5_yduv4")
+skeleton = NodePath("../..")
+
+[node name="Building6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0)
+mesh = ExtResource("6_w1pvi")
+skeleton = NodePath("../..")
+
+[node name="Building7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+mesh = ExtResource("7_ymdrp")
+skeleton = NodePath("../..")
+
+[node name="Building8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 0)
+mesh = ExtResource("8_wwerh")
+skeleton = NodePath("../..")

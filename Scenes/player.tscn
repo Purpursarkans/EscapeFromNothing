@@ -57,14 +57,16 @@ func _physics_process(delta):
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		$Audio/AudioPlayer.stream_paused = false
+		$Audio/Timer.start()
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-		$Audio/AudioPlayer.stream_paused = true
-
 	move_and_slide()
-	
+
+func _on_timer_timeout():
+	$Audio/AudioPlayer.stream_paused = true
+
 
 func _input(e):
 	if e is InputEventMouseMotion:
@@ -90,6 +92,7 @@ func _input(e):
 func _on_audio_player_finished():
 	$Audio/AudioPlayer.playing = true
 	pass # Replace with function body.
+
 "
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r4yr8"]
@@ -127,4 +130,10 @@ stream = ExtResource("1_i1kjt")
 volume_db = 1.0
 autoplay = true
 
+[node name="Timer" type="Timer" parent="Audio"]
+wait_time = 0.4
+one_shot = true
+autostart = true
+
 [connection signal="finished" from="Audio/AudioPlayer" to="." method="_on_audio_player_finished"]
+[connection signal="timeout" from="Audio/Timer" to="." method="_on_timer_timeout"]

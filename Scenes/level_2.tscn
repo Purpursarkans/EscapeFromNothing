@@ -1,0 +1,552 @@
+[gd_scene load_steps=62 format=3 uid="uid://spbho85g4ipr"]
+
+[ext_resource type="ArrayMesh" uid="uid://ckyx6samqxqb4" path="res://Models/City/base.obj" id="1_0rewq"]
+[ext_resource type="ArrayMesh" uid="uid://cyhxw6hb40hns" path="res://Models/City/bench.obj" id="2_yq7x4"]
+[ext_resource type="ArrayMesh" uid="uid://b38orixjr88cs" path="res://Models/City/box_A.obj" id="3_fl7g6"]
+[ext_resource type="ArrayMesh" uid="uid://qt6q5xumac0v" path="res://Models/City/box_B.obj" id="4_el62w"]
+[ext_resource type="ArrayMesh" uid="uid://cebvv552vipsb" path="res://Models/City/building_A.obj" id="5_fu1jx"]
+[ext_resource type="ArrayMesh" uid="uid://bkflw5tj7oarr" path="res://Models/City/building_A_withoutBase.obj" id="6_b0dmq"]
+[ext_resource type="ArrayMesh" uid="uid://cfklddqjlfpxc" path="res://Models/City/building_B.obj" id="7_hmadn"]
+[ext_resource type="ArrayMesh" uid="uid://2ei6upegvemr" path="res://Models/City/building_B_withoutBase.obj" id="8_05uy5"]
+[ext_resource type="ArrayMesh" uid="uid://t6d0c6ksv1yi" path="res://Models/City/building_C.obj" id="9_x5n32"]
+[ext_resource type="ArrayMesh" uid="uid://d4j1n28w3ifb7" path="res://Models/City/building_C_withoutBase.obj" id="10_k44xj"]
+[ext_resource type="ArrayMesh" uid="uid://b0ir518owetin" path="res://Models/City/building_D.obj" id="11_kuxp4"]
+[ext_resource type="ArrayMesh" uid="uid://4g7151mvw75m" path="res://Models/City/building_D_withoutBase.obj" id="12_l8env"]
+[ext_resource type="ArrayMesh" uid="uid://bvg8531qjv4k0" path="res://Models/City/building_E.obj" id="13_3geqf"]
+[ext_resource type="ArrayMesh" uid="uid://lmo8gtornuss" path="res://Models/City/building_E_withoutBase.obj" id="14_bnvcd"]
+[ext_resource type="ArrayMesh" uid="uid://byxihi5fhnwkh" path="res://Models/City/building_F.obj" id="15_m41xc"]
+[ext_resource type="ArrayMesh" uid="uid://w6rwufweumic" path="res://Models/City/building_F_withoutBase.obj" id="16_4s26x"]
+[ext_resource type="ArrayMesh" uid="uid://ntesg6awcquc" path="res://Models/City/building_G.obj" id="17_8mk14"]
+[ext_resource type="ArrayMesh" uid="uid://cs3rvcrov8htn" path="res://Models/City/building_G_withoutBase.obj" id="18_2yi1j"]
+[ext_resource type="ArrayMesh" uid="uid://cbqqncmm67l6d" path="res://Models/City/building_H.obj" id="19_ajyua"]
+[ext_resource type="ArrayMesh" uid="uid://da61p64sdls0i" path="res://Models/City/building_H_withoutBase.obj" id="20_g4kh0"]
+[ext_resource type="ArrayMesh" uid="uid://7canjlsp1084" path="res://Models/City/car_hatchback.obj" id="21_fpvmi"]
+[ext_resource type="ArrayMesh" uid="uid://cp3xvu25u1tjv" path="res://Models/City/bush.obj" id="22_ld3h6"]
+[ext_resource type="ArrayMesh" uid="uid://5ptqoy2n30u4" path="res://Models/City/car_hatchback_wheel_front_left.obj" id="23_v36aj"]
+[ext_resource type="ArrayMesh" uid="uid://dqldxnkx6ckvb" path="res://Models/City/car_hatchback_wheel_front_right.obj" id="24_lxqe5"]
+[ext_resource type="ArrayMesh" uid="uid://bhr6h2iui66t3" path="res://Models/City/car_hatchback_wheel_rear_left.obj" id="25_ti2sx"]
+[ext_resource type="ArrayMesh" uid="uid://dyf8g6xiorwrj" path="res://Models/City/car_hatchback_wheel_rear_right.obj" id="26_f8mw1"]
+[ext_resource type="ArrayMesh" uid="uid://bf4s7jqjmcau" path="res://Models/City/car_police.obj" id="27_yyd8x"]
+[ext_resource type="ArrayMesh" uid="uid://dj27e4nqwnkkm" path="res://Models/City/car_police_wheel_front_left.obj" id="28_iq7ns"]
+[ext_resource type="ArrayMesh" uid="uid://b08pqtv82r1mb" path="res://Models/City/car_police_wheel_front_right.obj" id="29_lofdg"]
+[ext_resource type="ArrayMesh" uid="uid://dvekt3aum6oqu" path="res://Models/City/car_police_wheel_rear_left.obj" id="30_ojx1r"]
+[ext_resource type="ArrayMesh" uid="uid://ecqq70y704mx" path="res://Models/City/car_police_wheel_rear_right.obj" id="31_mnm6d"]
+[ext_resource type="ArrayMesh" uid="uid://pet4trt7eyyf" path="res://Models/City/car_sedan.obj" id="32_dgk8g"]
+[ext_resource type="ArrayMesh" uid="uid://d3f226n0fbe2t" path="res://Models/City/car_sedan_wheel_front_left.obj" id="33_kebtd"]
+[ext_resource type="ArrayMesh" uid="uid://n7rloam64w1c" path="res://Models/City/car_sedan_wheel_front_right.obj" id="34_dksm4"]
+[ext_resource type="ArrayMesh" uid="uid://cdkql7e1lv8b7" path="res://Models/City/car_sedan_wheel_rear_left.obj" id="35_qkrhq"]
+[ext_resource type="ArrayMesh" uid="uid://c22m122do1tsy" path="res://Models/City/car_sedan_wheel_rear_right.obj" id="36_3h161"]
+[ext_resource type="ArrayMesh" uid="uid://b2qfomlvgxmkm" path="res://Models/City/car_stationwagon.obj" id="37_cpfop"]
+[ext_resource type="ArrayMesh" uid="uid://uusegxcpmuog" path="res://Models/City/car_stationwagon_wheel_front_left.obj" id="38_706vm"]
+[ext_resource type="ArrayMesh" uid="uid://51qbc5mniwre" path="res://Models/City/car_stationwagon_wheel_front_right.obj" id="39_btlbl"]
+[ext_resource type="ArrayMesh" uid="uid://dgbpd65j2fw1" path="res://Models/City/car_stationwagon_wheel_rear_left.obj" id="40_igk8k"]
+[ext_resource type="ArrayMesh" uid="uid://bkxi0glbubjfm" path="res://Models/City/car_stationwagon_wheel_rear_right.obj" id="41_avuvj"]
+[ext_resource type="ArrayMesh" uid="uid://rmrie3ypmwrb" path="res://Models/City/car_taxi.obj" id="42_hu2cy"]
+[ext_resource type="ArrayMesh" uid="uid://cwednlrkax5q4" path="res://Models/City/car_taxi_wheel_front_left.obj" id="43_1cdm0"]
+[ext_resource type="ArrayMesh" uid="uid://dcryrnmukefm4" path="res://Models/City/car_taxi_wheel_front_right.obj" id="44_nuhk0"]
+[ext_resource type="ArrayMesh" uid="uid://dkpo0qv4usil8" path="res://Models/City/car_taxi_wheel_rear_left.obj" id="45_v05mv"]
+[ext_resource type="ArrayMesh" uid="uid://c8wvsiwhv71m0" path="res://Models/City/car_taxi_wheel_rear_right.obj" id="46_yx6vg"]
+[ext_resource type="ArrayMesh" uid="uid://chtv8gujl6wj6" path="res://Models/City/dumpster.obj" id="47_i47ni"]
+[ext_resource type="ArrayMesh" uid="uid://dker1g2pax1e8" path="res://Models/City/firehydrant.obj" id="48_tggt8"]
+[ext_resource type="ArrayMesh" uid="uid://bemj5bwmwfm82" path="res://Models/City/road_corner.obj" id="49_f6s46"]
+[ext_resource type="ArrayMesh" uid="uid://d1vu2sqm6mjnr" path="res://Models/City/road_corner_curved.obj" id="50_gpcqi"]
+[ext_resource type="ArrayMesh" uid="uid://vpbmnejhfpss" path="res://Models/City/road_junction.obj" id="51_6opwb"]
+[ext_resource type="ArrayMesh" uid="uid://cwifgxn8s05lj" path="res://Models/City/road_straight.obj" id="52_xshdq"]
+[ext_resource type="ArrayMesh" uid="uid://c5e4b1gl2vqs7" path="res://Models/City/road_straight_crossing.obj" id="53_qb4oh"]
+[ext_resource type="ArrayMesh" uid="uid://c783lvir2b2lc" path="res://Models/City/road_tsplit.obj" id="54_ptmik"]
+[ext_resource type="ArrayMesh" uid="uid://4cx5chtsqqf7" path="res://Models/City/streetlight.obj" id="55_1x6rb"]
+[ext_resource type="ArrayMesh" uid="uid://3jkphfh86tew" path="res://Models/City/trafficlight_A.obj" id="56_d8vqh"]
+[ext_resource type="ArrayMesh" uid="uid://dtkroheyw4fli" path="res://Models/City/trafficlight_B.obj" id="57_erjxg"]
+[ext_resource type="ArrayMesh" uid="uid://dgkdoiquius23" path="res://Models/City/trafficlight_C.obj" id="58_kk0d3"]
+[ext_resource type="ArrayMesh" uid="uid://cltg5jtt74rjr" path="res://Models/City/trash_A.obj" id="59_4b5s2"]
+[ext_resource type="ArrayMesh" uid="uid://byppy8mfj5tpd" path="res://Models/City/trash_B.obj" id="60_rwt0o"]
+[ext_resource type="ArrayMesh" uid="uid://0jnep1ovf6fy" path="res://Models/City/watertower.obj" id="61_tuxoc"]
+
+[node name="Level2" type="Node3D"]
+
+[node name="examples" type="Node3D" parent="."]
+
+[node name="Base" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+mesh = ExtResource("1_0rewq")
+skeleton = NodePath("../..")
+
+[node name="Bench" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76322, 0, 2.61067)
+mesh = ExtResource("2_yq7x4")
+skeleton = NodePath("../..")
+
+[node name="BoxA" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02898, 0, 2.4716)
+mesh = ExtResource("3_fl7g6")
+skeleton = NodePath("../..")
+
+[node name="BoxB" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.450515, 0, 2.48222)
+mesh = ExtResource("4_el62w")
+skeleton = NodePath("../..")
+
+[node name="BuildingA" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+mesh = ExtResource("5_fu1jx")
+skeleton = NodePath("../..")
+
+[node name="BuildingAWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01963, 0, 1.17072)
+mesh = ExtResource("6_b0dmq")
+skeleton = NodePath("../..")
+
+[node name="BuildingB" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+mesh = ExtResource("7_hmadn")
+skeleton = NodePath("../..")
+
+[node name="BuildingBWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
+mesh = ExtResource("8_05uy5")
+skeleton = NodePath("../..")
+
+[node name="BuildingC" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)
+mesh = ExtResource("9_x5n32")
+skeleton = NodePath("../..")
+
+[node name="BuildingCWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 1)
+mesh = ExtResource("10_k44xj")
+skeleton = NodePath("../..")
+
+[node name="BuildingD" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 1)
+mesh = ExtResource("11_kuxp4")
+skeleton = NodePath("../..")
+
+[node name="BuildingDWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 1)
+mesh = ExtResource("12_l8env")
+skeleton = NodePath("../..")
+
+[node name="BuildingE" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 1)
+mesh = ExtResource("13_3geqf")
+skeleton = NodePath("../..")
+
+[node name="BuildingEWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 1)
+mesh = ExtResource("14_bnvcd")
+skeleton = NodePath("../..")
+
+[node name="BuildingF" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 1)
+mesh = ExtResource("15_m41xc")
+skeleton = NodePath("../..")
+
+[node name="BuildingFWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 1)
+mesh = ExtResource("16_4s26x")
+skeleton = NodePath("../..")
+
+[node name="BuildingG" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 1)
+mesh = ExtResource("17_8mk14")
+skeleton = NodePath("../..")
+
+[node name="BuildingGWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 1)
+mesh = ExtResource("18_2yi1j")
+skeleton = NodePath("../..")
+
+[node name="BuildingH" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 1)
+mesh = ExtResource("19_ajyua")
+skeleton = NodePath("../..")
+
+[node name="BuildingHWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 1)
+mesh = ExtResource("20_g4kh0")
+skeleton = NodePath("../..")
+
+[node name="CarHatchback" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.208331, 1.19209e-07, 2.7288)
+mesh = ExtResource("21_fpvmi")
+skeleton = NodePath("../..")
+
+[node name="Bush" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.868639, 0, 2.57599)
+mesh = ExtResource("22_ld3h6")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelFrontLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.360544, -0.00224304, 2.20672)
+mesh = ExtResource("23_v36aj")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelFrontRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.750502, -0.00224304, 2.80608)
+mesh = ExtResource("24_lxqe5")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelRearLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.366884, -0.00224316, 2.88953)
+mesh = ExtResource("25_ti2sx")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelRearRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.761638, -0.00224304, 3.06606)
+mesh = ExtResource("26_f8mw1")
+skeleton = NodePath("../..")
+
+[node name="CarPolice" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241416, 0, 3.8773)
+mesh = ExtResource("27_yyd8x")
+skeleton = NodePath("../..")
+
+[node name="CarPoliceWheelFrontLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560318, 0, 3.47106)
+mesh = ExtResource("28_iq7ns")
+skeleton = NodePath("../..")
+
+[node name="CarPoliceWheelFrontRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.929115, 0, 3.72921)
+mesh = ExtResource("29_lofdg")
+skeleton = NodePath("../..")
+
+[node name="CarPoliceWheelRearLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.511002, 0, 4.42513)
+mesh = ExtResource("30_ojx1r")
+skeleton = NodePath("../..")
+
+[node name="CarPoliceWheelRearRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.878707, 0, 3.75873)
+mesh = ExtResource("31_mnm6d")
+skeleton = NodePath("../..")
+
+[node name="CarSedan" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70142, 0, 3.97872)
+mesh = ExtResource("32_dgk8g")
+skeleton = NodePath("../..")
+
+[node name="CarSedanWheelFrontLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34214, 0, 4.08998)
+mesh = ExtResource("33_kebtd")
+skeleton = NodePath("../..")
+
+[node name="CarSedanWheelFrontRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34214, 0, 4.08998)
+mesh = ExtResource("34_dksm4")
+skeleton = NodePath("../..")
+
+[node name="CarSedanWheelRearLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34214, 0, 4.08998)
+mesh = ExtResource("35_qkrhq")
+skeleton = NodePath("../..")
+
+[node name="CarSedanWheelRearRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34214, 0, 4.08998)
+mesh = ExtResource("36_3h161")
+skeleton = NodePath("../..")
+
+[node name="CarStationwagon" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.34411, 0, 4.27306)
+mesh = ExtResource("37_cpfop")
+skeleton = NodePath("../..")
+
+[node name="CarStationwagonWheelFrontLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04629, 0, 4.19454)
+mesh = ExtResource("38_706vm")
+skeleton = NodePath("../..")
+
+[node name="CarStationwagonWheelFrontRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04629, 0, 4.19454)
+mesh = ExtResource("39_btlbl")
+skeleton = NodePath("../..")
+
+[node name="CarStationwagonWheelRearLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04629, 0, 4.19454)
+mesh = ExtResource("40_igk8k")
+skeleton = NodePath("../..")
+
+[node name="CarStationwagonWheelRearRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04629, 0, 4.19454)
+mesh = ExtResource("41_avuvj")
+skeleton = NodePath("../..")
+
+[node name="CarTaxi" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01787, 0, 4.45257)
+mesh = ExtResource("42_hu2cy")
+skeleton = NodePath("../..")
+
+[node name="CarTaxiWheelFrontLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63779, 0, 4.43307)
+mesh = ExtResource("43_1cdm0")
+skeleton = NodePath("../..")
+
+[node name="CarTaxiWheelFrontRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63779, 0, 4.43307)
+mesh = ExtResource("44_nuhk0")
+skeleton = NodePath("../..")
+
+[node name="CarTaxiWheelRearLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63779, 0, 4.43307)
+mesh = ExtResource("45_v05mv")
+skeleton = NodePath("../..")
+
+[node name="CarTaxiWheelRearRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63779, 0, 4.43307)
+mesh = ExtResource("46_yx6vg")
+skeleton = NodePath("../..")
+
+[node name="Dumpster" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.73935, 0, 4.74322)
+mesh = ExtResource("47_i47ni")
+skeleton = NodePath("../..")
+
+[node name="Firehydrant" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.24018, 0, 4.74412)
+mesh = ExtResource("48_tggt8")
+skeleton = NodePath("../..")
+
+[node name="RoadCorner" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5)
+mesh = ExtResource("49_f6s46")
+skeleton = NodePath("../..")
+
+[node name="RoadCornerCurved" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 7)
+mesh = ExtResource("50_gpcqi")
+skeleton = NodePath("../..")
+
+[node name="RoadJunction" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 5)
+mesh = ExtResource("51_6opwb")
+skeleton = NodePath("../..")
+
+[node name="RoadStraight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraightCrossing" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 9)
+mesh = ExtResource("53_qb4oh")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadTsplit" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 9)
+mesh = ExtResource("54_ptmik")
+skeleton = NodePath("../..")
+
+[node name="Streetlight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+mesh = ExtResource("55_1x6rb")
+skeleton = NodePath("../..")
+
+[node name="TrafficlightA" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 4)
+mesh = ExtResource("56_d8vqh")
+skeleton = NodePath("../..")
+
+[node name="TrafficlightB" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 6)
+mesh = ExtResource("57_erjxg")
+skeleton = NodePath("../..")
+
+[node name="TrafficlightC" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 5)
+mesh = ExtResource("58_kk0d3")
+skeleton = NodePath("../..")
+
+[node name="TrashA" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3407, 0, 4.5805)
+mesh = ExtResource("59_4b5s2")
+skeleton = NodePath("../..")
+
+[node name="TrashB" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6992, 0, 4.54757)
+mesh = ExtResource("60_rwt0o")
+skeleton = NodePath("../..")
+
+[node name="Watertower" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1998, 0, 4.45302)
+mesh = ExtResource("61_tuxoc")
+skeleton = NodePath("../..")
+
+[node name="RoadStraight" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 33)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight2" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 2)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight5" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -2)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight6" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -4)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight17" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -6)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight7" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -10)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight8" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -12)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight9" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -14)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraightCrossing" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -16)
+mesh = ExtResource("53_qb4oh")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight10" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, -8)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight11" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, -8)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight12" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, -8)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight13" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, -8)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight14" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, -8)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight15" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, -8)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight16" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, -8)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight3" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 4)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="RoadStraight4" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 6)
+mesh = ExtResource("52_xshdq")
+skeleton = NodePath("../RoadJunction")
+
+[node name="BuildingA" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, 2)
+mesh = ExtResource("5_fu1jx")
+skeleton = NodePath("../..")
+
+[node name="BuildingA2" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4, 0, -6)
+mesh = ExtResource("5_fu1jx")
+skeleton = NodePath("../..")
+
+[node name="BuildingB" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, 2)
+mesh = ExtResource("7_hmadn")
+skeleton = NodePath("../..")
+
+[node name="BuildingC" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, 1.19209e-07)
+mesh = ExtResource("9_x5n32")
+skeleton = NodePath("../..")
+
+[node name="Base" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+mesh = ExtResource("1_0rewq")
+skeleton = NodePath("../..")
+
+[node name="Base2" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6)
+mesh = ExtResource("1_0rewq")
+skeleton = NodePath("../..")
+
+[node name="Base5" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6)
+mesh = ExtResource("1_0rewq")
+skeleton = NodePath("../..")
+
+[node name="Base6" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6)
+mesh = ExtResource("1_0rewq")
+skeleton = NodePath("../..")
+
+[node name="Base7" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -10)
+mesh = ExtResource("1_0rewq")
+skeleton = NodePath("../..")
+
+[node name="Base8" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -10)
+mesh = ExtResource("1_0rewq")
+skeleton = NodePath("../..")
+
+[node name="Base3" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+mesh = ExtResource("1_0rewq")
+skeleton = NodePath("../..")
+
+[node name="Base4" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+mesh = ExtResource("1_0rewq")
+skeleton = NodePath("../..")
+
+[node name="BuildingD" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, -1.19209e-07)
+mesh = ExtResource("11_kuxp4")
+skeleton = NodePath("../..")
+
+[node name="BuildingE" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, -4)
+mesh = ExtResource("13_3geqf")
+skeleton = NodePath("../..")
+
+[node name="BuildingF" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, -4)
+mesh = ExtResource("15_m41xc")
+skeleton = NodePath("../..")
+
+[node name="BuildingG" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, -2)
+mesh = ExtResource("17_8mk14")
+skeleton = NodePath("../..")
+
+[node name="BuildingH" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(1.58933e-08, 0, 1, 0, 1, 0, -1, 0, 1.58933e-08, -2, 0, -2)
+mesh = ExtResource("19_ajyua")
+skeleton = NodePath("../..")
+
+[node name="RoadJunction" type="MeshInstance3D" parent="RoadStraight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+mesh = ExtResource("51_6opwb")
+skeleton = NodePath("../..")

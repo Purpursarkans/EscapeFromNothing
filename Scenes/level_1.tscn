@@ -1,68 +1,27 @@
-[gd_scene load_steps=18 format=3 uid="uid://dq3qb64ts1nsd"]
+[gd_scene load_steps=17 format=3 uid="uid://dq3qb64ts1nsd"]
 
-[ext_resource type="Texture2D" uid="uid://cap1slwqblunl" path="res://Textures/grass.tres" id="1_o5kri"]
+[ext_resource type="PackedScene" uid="uid://bhfy846h7fktn" path="res://Scenes/grass.tscn" id="1_sgfud"]
 [ext_resource type="PackedScene" uid="uid://d32epd17r5fkh" path="res://Scenes/player.tscn" id="2_6f40u"]
 [ext_resource type="ArrayMesh" uid="uid://cwifgxn8s05lj" path="res://Models/City/road_straight.obj" id="3_trnmo"]
 
-[sub_resource type="Environment" id="Environment_jh0a1"]
-background_mode = 1
-
-[sub_resource type="GDScript" id="GDScript_61om2"]
-resource_name = "WorldEnviroment"
-script/source = "extends WorldEnvironment
-
-
-@export var Enable : bool = false
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	if Enable == false:
-		set_environment(null)
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
-[sub_resource type="Gradient" id="Gradient_ljefr"]
-colors = PackedColorArray(0, 1, 0, 1, 0.559814, 0.275912, 0.223933, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_7nal7"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hhc7q"]
-seamless_blend_skirt = 0.185
-bump_strength = 0.0
-color_ramp = SubResource("Gradient_ljefr")
-noise = SubResource("FastNoiseLite_7nal7")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1guj"]
-albedo_color = Color(0, 0.65098, 0.305882, 1)
-albedo_texture = ExtResource("1_o5kri")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fngy"]
+albedo_color = Color(0.984314, 0.494118, 0, 1)
 emission_enabled = true
-normal_texture = SubResource("NoiseTexture2D_hhc7q")
-rim = 0.06
-rim_tint = 1.0
-ao_light_affect = 0.06
-heightmap_scale = 7.467
-heightmap_deep_parallax = true
-heightmap_min_layers = 8
-heightmap_max_layers = 32
-heightmap_flip_tangent = true
-heightmap_flip_binormal = true
-heightmap_flip_texture = true
-subsurf_scatter_strength = 1.0
-backlight = Color(0.788235, 0.160784, 0.156863, 1)
-refraction_scale = 1.0
-uv1_scale = Vector3(100, 100, 100)
-billboard_keep_scale = true
+emission = Color(0.796078, 0.403922, 0.278431, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_4f4g3"]
-material = SubResource("StandardMaterial3D_u1guj")
+[sub_resource type="SphereMesh" id="SphereMesh_15ikx"]
+material = SubResource("StandardMaterial3D_4fngy")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sfflw"]
-data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oo1aq"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_6asot"]
+material = SubResource("StandardMaterial3D_oo1aq")
+
+[sub_resource type="Environment" id="Environment_j76dv"]
+background_mode = 1
+glow_enabled = true
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k1wbo"]
 data = PackedVector3Array(-1, 0.07, 1, -1, 0, 1, -1, 0.07, -1, -1, 0.07, -1, -1, 0, 1, -1, 0, -1, 0.93, 0.1, -1, 1, 0.1, -1, 0.93, 0.1, 1, 0.93, 0.1, 1, 1, 0.1, -1, 1, 0.1, 1, 1, 0.07, -1, 1, 0, -1, 1, 0.07, 1, 1, 0.07, 1, 1, 0, -1, 1, 0, 1, -0.9, 0.07, -1, -1, 0.07, -1, -0.9, 0, -1, -0.9, 0, -1, -1, 0.07, -1, -1, 0, -1, 0.9, 0.07, 1, 1, 0.07, 1, 0.9, 0, 1, 0.9, 0, 1, 1, 0.07, 1, 1, 0, 1, 0.9, 0.07, -1, 1, 0.07, -1, 0.93, 0.1, -1, 0.93, 0.1, -1, 1, 0.07, -1, 1, 0.1, -1, -0.9, 0.07, -1, -0.9, 0.07, 1, -0.93, 0.1, -1, -0.93, 0.1, -1, -0.9, 0.07, 1, -0.93, 0.1, 1, -1, 0.07, -1, -0.9, 0.07, -1, -1, 0.1, -1, -1, 0.1, -1, -0.9, 0.07, -1, -0.93, 0.1, -1, 0.9, 0, 1, 0.9, 0, -1, -0.9, 0, 1, -0.9, 0, 1, 0.9, 0, -1, -0.9, 0, -1, -0.9, 0.07, 1, 0.9, 0.07, 1, -0.9, 0, 1, -0.9, 0, 1, 0.9, 0.07, 1, 0.9, 0, 1, -0.9, 0, -1, -1, 0, -1, -0.9, 0, 1, -0.9, 0, 1, -1, 0, -1, -1, 0, 1, 1, 0, -1, 0.9, 0, -1, 1, 0, 1, 1, 0, 1, 0.9, 0, -1, 0.9, 0, 1, 0.9, 0.07, -1, -0.9, 0.07, -1, 0.9, 0, -1, 0.9, 0, -1, -0.9, 0.07, -1, -0.9, 0, -1, -0.9, 0.07, 1, -0.9, 0, 1, -1, 0.07, 1, -1, 0.07, 1, -0.9, 0, 1, -1, 0, 1, 0.9, 0.07, -1, 0.9, 0, -1, 1, 0.07, -1, 1, 0.07, -1, 0.9, 0, -1, 1, 0, -1, -0.9, 0.07, 1, -1, 0.07, 1, -0.93, 0.1, 1, -0.93, 0.1, 1, -1, 0.07, 1, -1, 0.1, 1, -1, 0.1, -1, -0.93, 0.1, -1, -1, 0.1, 1, -1, 0.1, 1, -0.93, 0.1, -1, -0.93, 0.1, 1, 1, 0.07, -1, 1, 0.07, 1, 1, 0.1, -1, 1, 0.1, -1, 1, 0.07, 1, 1, 0.1, 1, 0.9, 0.07, 1, 0.9, 0.07, -1, 0.93, 0.1, 1, 0.93, 0.1, 1, 0.9, 0.07, -1, 0.93, 0.1, -1, -1, 0.07, 1, -1, 0.07, -1, -1, 0.1, 1, -1, 0.1, 1, -1, 0.07, -1, -1, 0.1, -1, 1, 0.1, 1, 1, 0.07, 1, 0.93, 0.1, 1, 0.93, 0.1, 1, 1, 0.07, 1, 0.9, 0.07, 1, 0.9, 0.07, -1, 0.9, 0.07, 1, -0.9, 0.07, -1, -0.9, 0.07, -1, 0.9, 0.07, 1, -0.9, 0.07, 1, 0.02, 0.073, -0.9, 0.02, 0.073, -0.7, -0.02, 0.073, -0.9, -0.02, 0.073, -0.9, 0.02, 0.073, -0.7, -0.02, 0.073, -0.7, -0.58, 0.073, -1, -0.58, 0.073, 1, -0.62, 0.073, -1, -0.62, 0.073, -1, -0.58, 0.073, 1, -0.62, 0.073, 1, 0.62, 0.073, -1, 0.62, 0.073, 1, 0.58, 0.073, -1, 0.58, 0.073, -1, 0.62, 0.073, 1, 0.58, 0.073, 1, 0.02, 0.073, -0.5, 0.02, 0.073, -0.3, -0.02, 0.073, -0.5, -0.02, 0.073, -0.5, 0.02, 0.073, -0.3, -0.02, 0.073, -0.3, 0.02, 0.073, -0.1, 0.02, 0.073, 0.1, -0.02, 0.073, -0.1, -0.02, 0.073, -0.1, 0.02, 0.073, 0.1, -0.02, 0.073, 0.1, 0.02, 0.073, 0.3, 0.02, 0.073, 0.5, -0.02, 0.073, 0.3, -0.02, 0.073, 0.3, 0.02, 0.073, 0.5, -0.02, 0.073, 0.5, 0.02, 0.073, 0.7, 0.02, 0.073, 0.9, -0.02, 0.073, 0.7, -0.02, 0.073, 0.7, 0.02, 0.073, 0.9, -0.02, 0.073, 0.9)
@@ -113,25 +72,30 @@ func _process(delta):
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_s5uwe"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_cdvm5"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2ai37"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
 [node name="Level1" type="Node3D"]
 
+[node name="sun" type="MeshInstance3D" parent="."]
+transform = Transform3D(32.6, 0, 0, 0, 32.6, 0, 0, 0, 32.6, 36.8687, 425.551, 39.8706)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_15ikx")
+
+[node name="sun2" type="MeshInstance3D" parent="."]
+transform = Transform3D(26.91, 0, 0, 0, 26.91, 0, 0, 0, 26.91, 35.5098, 412.624, 39.633)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_6asot")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_jh0a1")
-script = SubResource("GDScript_61om2")
-Enable = true
+environment = SubResource("Environment_j76dv")
 
-[node name="Grass" type="MeshInstance3D" parent="."]
-transform = Transform3D(1000, 0, 0, 0, 10, 0, 0, 0, 1000, 0, -0.5, 0)
-mesh = SubResource("PlaneMesh_4f4g3")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Grass"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Grass/StaticBody3D"]
-visible = false
-shape = SubResource("ConcavePolygonShape3D_sfflw")
+[node name="Grass" parent="." instance=ExtResource("1_sgfud")]
 
 [node name="Player" parent="." instance=ExtResource("2_6f40u")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -8.91543, 1.02842, 6.18004)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.0375576, 4.10175, -11.9306)
 
 [node name="Road" type="Node3D" parent="."]
 
@@ -975,3 +939,2070 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -0.5)
 
 [node name="Debug" type="MeshInstance3D" parent="Trees/Tree32"]
 mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree114" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.5, -24)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree114"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree115" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.5, -27)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree115"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree116" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.5, -30)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree116"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree117" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.5, -33)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree117"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree118" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.5, -36)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree118"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree119" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.5, -39)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree119"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree120" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.5, -42)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree120"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree121" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.5, -45)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree121"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree122" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.5, -48)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree122"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree123" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.5, -51)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree123"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree124" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.5, -25.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree124"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree125" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.5, -28.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree125"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree126" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.5, -31.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree126"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree127" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.5, -34.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree127"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree128" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.5, -37.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree128"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree129" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.5, -40.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree129"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree130" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.5, -43.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree130"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree131" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.5, -46.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree131"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree132" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.5, -49.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree132"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree133" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -48.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree133"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree134" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -50.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree134"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree135" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -50.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree135"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree136" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -49.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree136"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree137" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -48.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree137"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree138" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -46.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree138"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree139" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -47.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree139"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree140" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -45.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree140"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree141" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -44.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree141"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree142" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -43.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree142"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree143" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -42.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree143"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree144" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -41.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree144"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree145" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -40.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree145"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree146" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -39.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree146"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree147" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -38.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree147"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree148" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -37.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree148"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree149" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -36.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree149"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree150" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -35.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree150"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree151" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -34.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree151"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree152" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -33.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree152"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree153" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -32.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree153"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree154" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -31.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree154"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree155" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -30.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree155"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree156" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -29.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree156"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree157" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -28.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree157"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree158" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -27.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree158"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree159" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -26.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree159"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree160" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -25.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree160"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree161" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -24.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree161"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree162" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -24.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree162"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree163" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -25)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree163"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree164" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -25.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree164"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree165" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -26)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree165"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree166" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -26.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree166"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree167" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -27)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree167"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree168" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -27.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree168"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree169" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -28)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree169"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree170" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -28.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree170"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree171" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -29)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree171"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree172" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -29.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree172"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree173" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -30)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree173"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree174" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -30.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree174"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree175" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -31)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree175"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree176" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -31.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree176"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree177" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -32)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree177"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree178" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -32.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree178"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree179" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -33)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree179"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree180" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -33.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree180"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree181" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -34)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree181"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree182" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -34.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree182"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree183" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -35)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree183"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree184" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -35.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree184"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree185" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -36)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree185"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree186" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -36.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree186"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree187" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -37)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree187"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree188" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -37.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree188"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree189" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -38)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree189"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree190" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -38.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree190"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree191" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -39)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree191"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree192" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -39.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree192"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree193" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -40)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree193"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree194" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -40.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree194"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree195" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -41)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree195"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree196" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -41.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree196"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree197" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -42)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree197"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree198" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -42.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree198"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree199" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -43)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree199"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree200" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -43.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree200"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree201" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -44)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree201"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree202" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -44.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree202"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree203" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -45)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree203"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree204" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -45.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree204"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree205" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -46)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree205"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree206" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -46.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree206"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree207" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -47)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree207"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree208" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -47.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree208"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree209" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -48)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree209"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree210" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -48.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree210"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree211" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -49)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree211"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree212" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -49.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree212"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree213" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -50)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree213"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree214" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.5, -50.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree214"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree215" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -46.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree215"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree216" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -44.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree216"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree217" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -42.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree217"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree218" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -40.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree218"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree219" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -38.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree219"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree220" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -36.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree220"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree221" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -34.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree221"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree222" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -32.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree222"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree223" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -30.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree223"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree224" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -28.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree224"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree225" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -26.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree225"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree226" type="Node3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -0.5, -24.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree226"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree227" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -51)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree227"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree228" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -48)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree228"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree229" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -45)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree229"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree230" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -42)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree230"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree231" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -39)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree231"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree232" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -36)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree232"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree233" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -33)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree233"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree234" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -30)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree234"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree235" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -27)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree235"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree236" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -24)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree236"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree237" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -49.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree237"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree238" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -46.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree238"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree239" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -43.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree239"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree240" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -40.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree240"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree241" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -37.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree241"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree242" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -34.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree242"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree243" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -31.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree243"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree244" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -28.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree244"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree245" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -25.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree245"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree246" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -26.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree246"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree247" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -24.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree247"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree248" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -24.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree248"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree249" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -25.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree249"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree250" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -26.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree250"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree251" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -28.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree251"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree252" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -27.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree252"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree253" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -29.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree253"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree254" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -30.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree254"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree255" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -31.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree255"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree256" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -32.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree256"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree257" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -33.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree257"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree258" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -34.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree258"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree259" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -35.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree259"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree260" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -36.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree260"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree261" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -37.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree261"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree262" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -38.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree262"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree263" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -39.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree263"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree264" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -40.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree264"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree265" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -41.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree265"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree266" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -42.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree266"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree267" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -43.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree267"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree268" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -44.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree268"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree269" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -45.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree269"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree270" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -46.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree270"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree271" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -47.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree271"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree272" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -48.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree272"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree273" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -49.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree273"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree274" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -50.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree274"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree275" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -50.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree275"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree276" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -50)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree276"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree277" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -49.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree277"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree278" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -49)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree278"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree279" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -48.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree279"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree280" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -48)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree280"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree281" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -47.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree281"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree282" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -47)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree282"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree283" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -46.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree283"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree284" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -46)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree284"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree285" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -45.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree285"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree286" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -45)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree286"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree287" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -44.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree287"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree288" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -44)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree288"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree289" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -43.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree289"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree290" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -43)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree290"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree291" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -42.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree291"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree292" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -42)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree292"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree293" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -41.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree293"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree294" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -41)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree294"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree295" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -40.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree295"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree296" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -40)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree296"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree297" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -39.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree297"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree298" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -39)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree298"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree299" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -38.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree299"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree300" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -38)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree300"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree301" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -37.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree301"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree302" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -37)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree302"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree303" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -36.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree303"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree304" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -36)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree304"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree305" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -35.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree305"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree306" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -35)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree306"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree307" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -34.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree307"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree308" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -34)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree308"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree309" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -33.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree309"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree310" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -33)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree310"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree311" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -32.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree311"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree312" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -32)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree312"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree313" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -31.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree313"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree314" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -31)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree314"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree315" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -30.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree315"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree316" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -30)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree316"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree317" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -29.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree317"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree318" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -29)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree318"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree319" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -28.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree319"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree320" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -28)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree320"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree321" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -27.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree321"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree322" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -27)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree322"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree323" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -26.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree323"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree324" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -26)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree324"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree325" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -25.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree325"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree326" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -25)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree326"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree327" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -24.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree327"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree328" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -28.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree328"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree329" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -30.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree329"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree330" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -32.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree330"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree331" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -34.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree331"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree332" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -36.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree332"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree333" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -38.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree333"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree334" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -40.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree334"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree335" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -42.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree335"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree336" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -44.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree336"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree337" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -46.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree337"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree338" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -48.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree338"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree339" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -50.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree339"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree340" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -27)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree340"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree341" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -24)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree341"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree342" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -21)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree342"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree343" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -18)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree343"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree344" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -15)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree344"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree345" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -12)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree345"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree346" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -9)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree346"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree347" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -6)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree347"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree348" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, -3)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree348"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree349" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.1593, -0.5, 0)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree349"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree350" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -25.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree350"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree351" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -22.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree351"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree352" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -19.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree352"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree353" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -16.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree353"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree354" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -13.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree354"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree355" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -10.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree355"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree356" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -7.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree356"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree357" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -4.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree357"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree358" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.1593, -0.5, -1.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree358"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree359" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -2.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree359"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree360" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -0.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree360"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree361" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -0.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree361"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree362" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -1.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree362"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree363" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -2.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree363"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree364" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -4.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree364"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree365" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -3.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree365"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree366" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -5.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree366"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree367" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -6.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree367"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree368" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -7.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree368"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree369" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -8.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree369"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree370" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -9.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree370"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree371" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -10.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree371"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree372" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -11.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree372"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree373" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -12.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree373"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree374" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -13.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree374"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree375" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -14.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree375"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree376" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -15.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree376"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree377" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -16.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree377"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree378" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -17.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree378"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree379" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -18.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree379"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree380" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -19.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree380"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree381" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -20.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree381"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree382" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -21.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree382"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree383" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -22.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree383"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree384" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -23.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree384"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree385" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -24.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree385"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree386" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -25.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree386"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree387" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.1593, -0.5, -26.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree387"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree388" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -26.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree388"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree389" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -26)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree389"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree390" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -25.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree390"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree391" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -25)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree391"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree392" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -24.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree392"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree393" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -24)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree393"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree394" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -23.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree394"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree395" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -23)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree395"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree396" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -22.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree396"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree397" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -22)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree397"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree398" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -21.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree398"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree399" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -21)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree399"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree400" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -20.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree400"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree401" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -20)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree401"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree402" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -19.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree402"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree403" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -19)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree403"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree404" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -18.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree404"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree405" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -18)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree405"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree406" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -17.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree406"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree407" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -17)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree407"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree408" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -16.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree408"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree409" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -16)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree409"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree410" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -15.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree410"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree411" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -15)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree411"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree412" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -14.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree412"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree413" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -14)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree413"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree414" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -13.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree414"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree415" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -13)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree415"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree416" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -12.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree416"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree417" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -12)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree417"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree418" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -11.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree418"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree419" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -11)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree419"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree420" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -10.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree420"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree421" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -10)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree421"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree422" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -9.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree422"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree423" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -9)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree423"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree424" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -8.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree424"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree425" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -8)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree425"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree426" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -7.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree426"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree427" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -7)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree427"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree428" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -6.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree428"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree429" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -6)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree429"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree430" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -5.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree430"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree431" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree431"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree432" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -4.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree432"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree433" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -4)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree433"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree434" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -3.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree434"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree435" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -3)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree435"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree436" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -2.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree436"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree437" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -2)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree437"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree438" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -1.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree438"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree439" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -1)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree439"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree440" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.1593, -0.5, -0.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree440"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree441" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -4.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree441"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree442" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -6.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree442"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree443" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -8.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree443"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree444" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -10.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree444"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree445" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -12.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree445"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree446" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -14.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree446"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree447" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -16.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree447"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree448" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -18.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree448"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree449" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -20.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree449"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree450" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -22.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree450"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree451" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -24.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree451"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="Tree452" type="Node3D" parent="Trees"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.1593, -0.5, -26.5)
+
+[node name="Debug" type="MeshInstance3D" parent="Trees/Tree452"]
+mesh = SubResource("CylinderMesh_s5uwe")
+
+[node name="invWalls" type="Node3D" parent="."]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="invWalls"]
+transform = Transform3D(16.5856, 0, 0, 0, -4.37114e-08, 6.56565, 0, -1, -2.86994e-07, 0, 5, -9.44501)
+mesh = SubResource("PlaneMesh_cdvm5")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="invWalls/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="invWalls/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2ai37")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="invWalls"]
+transform = Transform3D(-9.38342e-07, -1, -2.86994e-07, 0, -4.37114e-08, 6.56565, -21.4668, 4.37114e-08, 1.25449e-14, 5, 5, -30.0363)
+mesh = SubResource("PlaneMesh_cdvm5")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="invWalls/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="invWalls/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2ai37")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="invWalls"]
+transform = Transform3D(-9.38341e-07, 1, 2.86994e-07, 0, -4.37114e-08, 6.56565, 21.4668, 4.37114e-08, 1.25449e-14, -5.06107, 5, -30.0363)
+mesh = SubResource("PlaneMesh_cdvm5")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="invWalls/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="invWalls/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2ai37")
