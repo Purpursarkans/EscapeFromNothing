@@ -1,0 +1,121 @@
+[gd_scene load_steps=4 format=3 uid="uid://dql8kodsdvwwv"]
+
+[ext_resource type="PackedScene" uid="uid://bhfy846h7fktn" path="res://Scenes/grass.tscn" id="1_e6con"]
+[ext_resource type="PackedScene" uid="uid://d32epd17r5fkh" path="res://Scenes/player.tscn" id="2_rh5su"]
+
+[sub_resource type="GDScript" id="GDScript_3h21m"]
+resource_name = "Trees"
+script/source = "@tool
+
+extends Node3D
+
+
+@export var LineTrees : int = 2 :
+	get:
+		return LineTrees
+	set(value):
+		LineTrees = value
+		spawn()
+
+@export var ColTrees : int = 2 :
+	get:
+		return ColTrees
+	set(value):
+		ColTrees = value
+		spawn()
+
+@export var RandomDis : bool = false:
+	get:
+		return RandomDis
+	set(value):
+		RandomDis = value
+		spawn()
+
+@export var DisTrees : float = 2 :
+	get:
+		return DisTrees
+	set(value):
+		DisTrees = value
+		spawn()
+
+@export var RandomPos : Vector2 :
+	get:
+		return RandomPos
+	set(value):
+		RandomPos = value
+		spawn()
+
+@export var Spawn : bool :
+	get:
+		return Spawn
+	set(value):
+		Spawn = value
+		spawn()
+
+
+var posTree : Vector3
+
+func spawn():
+	var cube = preload(\"res://Scenes/cube.tscn\")
+	randomize()
+	posTree = Vector3(0,0,0)
+	print_debug(\"spawn\")
+	for i in self.get_children():
+		self.remove_child(i)
+		i.queue_free()
+	
+	for i in LineTrees:
+		for n in ColTrees:
+			var cubeInst = cube.instantiate()
+			var tree = cubeInst
+			
+			#var tree = MeshInstance3D.new()
+			#tree.mesh = BoxMesh.new()
+			
+			if tree.get_parent():
+				tree.get_parent().remove_child(tree)
+			add_child(tree)
+			#tree.owner = self
+			tree.position.x = posTree.x + randf_range(RandomPos.x, RandomPos.y)
+			tree.position.z = posTree.z + randf_range(RandomPos.x, RandomPos.y)
+			posTree = tree.position
+			
+			if RandomDis:
+				#print_debug(\"random\")
+				posTree += Vector3(0,0,randf_range(RandomPos.x, RandomPos.y))
+			else:
+				#print_debug(\"not random\")
+				posTree += Vector3(0,0,DisTrees)
+		
+		if RandomDis:
+			#print_debug(\"random\")
+			posTree += Vector3(randf_range(RandomPos.x, RandomPos.y),0,0)
+			posTree.z = randf_range(RandomPos.x, RandomPos.y)
+		else:
+			#print_debug(\"not random\")
+			posTree += Vector3(DisTrees,0,0)
+			posTree.z = 0
+		
+
+	
+
+"
+
+[node name="TestTrees" type="Node3D"]
+
+[node name="Grass" parent="." instance=ExtResource("1_e6con")]
+transform = Transform3D(1000, 0, 0, 0, 10, 0, 0, 0, 1000, -3.95244, 0, 1.78344)
+
+[node name="Trees" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = SubResource("GDScript_3h21m")
+LineTrees = 20
+ColTrees = 20
+DisTrees = 3.0
+Spawn = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 145.562, 240.48, 129.626)
+
+[node name="Player" parent="." instance=ExtResource("2_rh5su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.55517, 0)

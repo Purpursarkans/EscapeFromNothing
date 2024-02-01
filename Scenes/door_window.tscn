@@ -66,39 +66,41 @@ albedo_color = Color(0.411765, 0.619608, 0.803922, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45fye"]
 albedo_color = Color(0.411765, 0.619608, 0.803922, 1)
 
-[node name="Door_window" type="Node3D"]
+[node name="Door_Window_Root" type="Node3D"]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Door_window" type="Node3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door_window"]
 libraries = {
 "": SubResource("AnimationLibrary_rlf5x")
 }
 
-[node name="Door" type="CSGCombiner3D" parent="."]
+[node name="Door" type="CSGCombiner3D" parent="Door_window"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 use_collision = true
 script = SubResource("GDScript_ldhm5")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Door"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Door_window/Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 size = Vector3(0.1, 2, 1)
 material = SubResource("StandardMaterial3D_bi2bi")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Door"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Door_window/Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
 operation = 2
 size = Vector3(0.1, 0.5, 0.6)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Door"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Door_window/Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555, 0.348328)
 size = Vector3(0.154687, 0.0582031, 0.1)
 material = SubResource("StandardMaterial3D_hdx76")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Door"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Door_window/Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
 size = Vector3(0.1, 0.1, 0.8)
 material = SubResource("StandardMaterial3D_15kog")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Door"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Door_window/Door"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
 size = Vector3(0.1, 0.1, 0.8)
 material = SubResource("StandardMaterial3D_45fye")

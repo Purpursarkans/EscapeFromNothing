@@ -1,0 +1,2807 @@
+[gd_scene load_steps=68 format=3 uid="uid://cqmgj34sc2v0j"]
+
+[ext_resource type="PackedScene" uid="uid://bhfy846h7fktn" path="res://Scenes/grass.tscn" id="1_am720"]
+[ext_resource type="PackedScene" uid="uid://d32epd17r5fkh" path="res://Scenes/player.tscn" id="2_3vh8f"]
+[ext_resource type="ArrayMesh" uid="uid://ckyx6samqxqb4" path="res://Models/City/base.obj" id="3_xr5hm"]
+[ext_resource type="ArrayMesh" uid="uid://cyhxw6hb40hns" path="res://Models/City/bench.obj" id="4_bblcx"]
+[ext_resource type="ArrayMesh" uid="uid://b38orixjr88cs" path="res://Models/City/box_A.obj" id="5_o5jdl"]
+[ext_resource type="ArrayMesh" uid="uid://qt6q5xumac0v" path="res://Models/City/box_B.obj" id="6_wjqmy"]
+[ext_resource type="ArrayMesh" uid="uid://cebvv552vipsb" path="res://Models/City/building_A.obj" id="7_kt0u2"]
+[ext_resource type="ArrayMesh" uid="uid://bkflw5tj7oarr" path="res://Models/City/building_A_withoutBase.obj" id="8_i8tfi"]
+[ext_resource type="ArrayMesh" uid="uid://cfklddqjlfpxc" path="res://Models/City/building_B.obj" id="9_qsjg3"]
+[ext_resource type="ArrayMesh" uid="uid://2ei6upegvemr" path="res://Models/City/building_B_withoutBase.obj" id="10_dwdb7"]
+[ext_resource type="ArrayMesh" uid="uid://t6d0c6ksv1yi" path="res://Models/City/building_C.obj" id="11_jxx0a"]
+[ext_resource type="ArrayMesh" uid="uid://d4j1n28w3ifb7" path="res://Models/City/building_C_withoutBase.obj" id="12_8ax0j"]
+[ext_resource type="ArrayMesh" uid="uid://b0ir518owetin" path="res://Models/City/building_D.obj" id="13_padyr"]
+[ext_resource type="ArrayMesh" uid="uid://4g7151mvw75m" path="res://Models/City/building_D_withoutBase.obj" id="14_5ymvm"]
+[ext_resource type="ArrayMesh" uid="uid://bvg8531qjv4k0" path="res://Models/City/building_E.obj" id="15_i3fhj"]
+[ext_resource type="ArrayMesh" uid="uid://lmo8gtornuss" path="res://Models/City/building_E_withoutBase.obj" id="16_shbry"]
+[ext_resource type="ArrayMesh" uid="uid://byxihi5fhnwkh" path="res://Models/City/building_F.obj" id="17_tn7j6"]
+[ext_resource type="ArrayMesh" uid="uid://w6rwufweumic" path="res://Models/City/building_F_withoutBase.obj" id="18_0e8tl"]
+[ext_resource type="ArrayMesh" uid="uid://ntesg6awcquc" path="res://Models/City/building_G.obj" id="19_mmf13"]
+[ext_resource type="ArrayMesh" uid="uid://cs3rvcrov8htn" path="res://Models/City/building_G_withoutBase.obj" id="20_2hr1w"]
+[ext_resource type="ArrayMesh" uid="uid://cbqqncmm67l6d" path="res://Models/City/building_H.obj" id="21_ixgkl"]
+[ext_resource type="ArrayMesh" uid="uid://da61p64sdls0i" path="res://Models/City/building_H_withoutBase.obj" id="22_5djnp"]
+[ext_resource type="ArrayMesh" uid="uid://7canjlsp1084" path="res://Models/City/car_hatchback.obj" id="23_vkrng"]
+[ext_resource type="ArrayMesh" uid="uid://cp3xvu25u1tjv" path="res://Models/City/bush.obj" id="24_lh0sr"]
+[ext_resource type="ArrayMesh" uid="uid://5ptqoy2n30u4" path="res://Models/City/car_hatchback_wheel_front_left.obj" id="25_mt6vd"]
+[ext_resource type="ArrayMesh" uid="uid://dqldxnkx6ckvb" path="res://Models/City/car_hatchback_wheel_front_right.obj" id="26_8yxmv"]
+[ext_resource type="ArrayMesh" uid="uid://bhr6h2iui66t3" path="res://Models/City/car_hatchback_wheel_rear_left.obj" id="27_m5nct"]
+[ext_resource type="ArrayMesh" uid="uid://dyf8g6xiorwrj" path="res://Models/City/car_hatchback_wheel_rear_right.obj" id="28_v3hk5"]
+[ext_resource type="ArrayMesh" uid="uid://bf4s7jqjmcau" path="res://Models/City/car_police.obj" id="29_f5hku"]
+[ext_resource type="ArrayMesh" uid="uid://dj27e4nqwnkkm" path="res://Models/City/car_police_wheel_front_left.obj" id="30_y7pf3"]
+[ext_resource type="ArrayMesh" uid="uid://b08pqtv82r1mb" path="res://Models/City/car_police_wheel_front_right.obj" id="31_7gnl6"]
+[ext_resource type="ArrayMesh" uid="uid://dvekt3aum6oqu" path="res://Models/City/car_police_wheel_rear_left.obj" id="32_xw1yd"]
+[ext_resource type="ArrayMesh" uid="uid://ecqq70y704mx" path="res://Models/City/car_police_wheel_rear_right.obj" id="33_5augm"]
+[ext_resource type="ArrayMesh" uid="uid://pet4trt7eyyf" path="res://Models/City/car_sedan.obj" id="34_1r6rt"]
+[ext_resource type="ArrayMesh" uid="uid://d3f226n0fbe2t" path="res://Models/City/car_sedan_wheel_front_left.obj" id="35_5fwi7"]
+[ext_resource type="ArrayMesh" uid="uid://n7rloam64w1c" path="res://Models/City/car_sedan_wheel_front_right.obj" id="36_66wov"]
+[ext_resource type="ArrayMesh" uid="uid://cdkql7e1lv8b7" path="res://Models/City/car_sedan_wheel_rear_left.obj" id="37_kxi3r"]
+[ext_resource type="ArrayMesh" uid="uid://c22m122do1tsy" path="res://Models/City/car_sedan_wheel_rear_right.obj" id="38_hic1g"]
+[ext_resource type="ArrayMesh" uid="uid://b2qfomlvgxmkm" path="res://Models/City/car_stationwagon.obj" id="39_atwwn"]
+[ext_resource type="ArrayMesh" uid="uid://uusegxcpmuog" path="res://Models/City/car_stationwagon_wheel_front_left.obj" id="40_jelmn"]
+[ext_resource type="ArrayMesh" uid="uid://51qbc5mniwre" path="res://Models/City/car_stationwagon_wheel_front_right.obj" id="41_qjhdi"]
+[ext_resource type="ArrayMesh" uid="uid://dgbpd65j2fw1" path="res://Models/City/car_stationwagon_wheel_rear_left.obj" id="42_o3cvi"]
+[ext_resource type="ArrayMesh" uid="uid://bkxi0glbubjfm" path="res://Models/City/car_stationwagon_wheel_rear_right.obj" id="43_xolqr"]
+[ext_resource type="ArrayMesh" uid="uid://rmrie3ypmwrb" path="res://Models/City/car_taxi.obj" id="44_53jyl"]
+[ext_resource type="ArrayMesh" uid="uid://cwednlrkax5q4" path="res://Models/City/car_taxi_wheel_front_left.obj" id="45_je2bm"]
+[ext_resource type="ArrayMesh" uid="uid://dcryrnmukefm4" path="res://Models/City/car_taxi_wheel_front_right.obj" id="46_d607x"]
+[ext_resource type="ArrayMesh" uid="uid://dkpo0qv4usil8" path="res://Models/City/car_taxi_wheel_rear_left.obj" id="47_ukmst"]
+[ext_resource type="ArrayMesh" uid="uid://c8wvsiwhv71m0" path="res://Models/City/car_taxi_wheel_rear_right.obj" id="48_5bvqn"]
+[ext_resource type="ArrayMesh" uid="uid://chtv8gujl6wj6" path="res://Models/City/dumpster.obj" id="49_g7xtw"]
+[ext_resource type="ArrayMesh" uid="uid://dker1g2pax1e8" path="res://Models/City/firehydrant.obj" id="50_bbqks"]
+[ext_resource type="ArrayMesh" uid="uid://bemj5bwmwfm82" path="res://Models/City/road_corner.obj" id="51_54r7e"]
+[ext_resource type="ArrayMesh" uid="uid://d1vu2sqm6mjnr" path="res://Models/City/road_corner_curved.obj" id="52_nimp2"]
+[ext_resource type="ArrayMesh" uid="uid://cwifgxn8s05lj" path="res://Models/City/road_straight.obj" id="53_klig0"]
+[ext_resource type="ArrayMesh" uid="uid://c5e4b1gl2vqs7" path="res://Models/City/road_straight_crossing.obj" id="54_5d48b"]
+[ext_resource type="ArrayMesh" uid="uid://c783lvir2b2lc" path="res://Models/City/road_tsplit.obj" id="55_xkxfg"]
+[ext_resource type="ArrayMesh" uid="uid://4cx5chtsqqf7" path="res://Models/City/streetlight.obj" id="56_uhffh"]
+[ext_resource type="ArrayMesh" uid="uid://3jkphfh86tew" path="res://Models/City/trafficlight_A.obj" id="57_1xdd5"]
+[ext_resource type="ArrayMesh" uid="uid://dtkroheyw4fli" path="res://Models/City/trafficlight_B.obj" id="58_u2ept"]
+[ext_resource type="ArrayMesh" uid="uid://dgkdoiquius23" path="res://Models/City/trafficlight_C.obj" id="59_k1lf5"]
+[ext_resource type="ArrayMesh" uid="uid://cltg5jtt74rjr" path="res://Models/City/trash_A.obj" id="60_3xvi8"]
+[ext_resource type="ArrayMesh" uid="uid://byppy8mfj5tpd" path="res://Models/City/trash_B.obj" id="61_s2nad"]
+[ext_resource type="ArrayMesh" uid="uid://0jnep1ovf6fy" path="res://Models/City/watertower.obj" id="62_yeske"]
+[ext_resource type="ArrayMesh" uid="uid://vpbmnejhfpss" path="res://Models/City/road_junction.obj" id="63_xllub"]
+
+[sub_resource type="GDScript" id="GDScript_r7wkb"]
+resource_name = "Homes"
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	randomize()
+	
+	var numHome = get_child_count()
+	for n in range(1,numHome+1):
+		var home = get_node(\"Home\" + str(n))
+		var rand = randi() % 8+1
+		
+		var HomeLoad = preload(\"res://Scenes/buildings.tscn\")
+		
+		var HomeInst = HomeLoad.instantiate()
+		var HomeNode = HomeInst.get_node(\"Building\"+str(rand))
+		HomeNode.position = Vector3(0,0,0)
+		
+		if HomeNode.get_parent():
+			HomeNode.get_parent().remove_child(HomeNode)
+		
+		home.get_child(1).free()
+		home.add_child.call_deferred(HomeNode)
+		
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+"
+
+[sub_resource type="BoxMesh" id="BoxMesh_4heks"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_j73pc"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7kcu1"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="Level3" type="Node3D"]
+
+[node name="Grass" parent="." instance=ExtResource("1_am720")]
+transform = Transform3D(1000, 0, 0, 0, 10, 0, 0, 0, 1000, 0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_3vh8f")]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 49.6432, 0.999996, 280.072)
+
+[node name="examples" type="Node3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 392, 0, 53)
+
+[node name="Base" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../..")
+
+[node name="Bench" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76322, 0, 2.61067)
+mesh = ExtResource("4_bblcx")
+skeleton = NodePath("../..")
+
+[node name="BoxA" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02898, 0, 2.4716)
+mesh = ExtResource("5_o5jdl")
+skeleton = NodePath("../..")
+
+[node name="BoxB" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.450515, 0, 2.48222)
+mesh = ExtResource("6_wjqmy")
+skeleton = NodePath("../..")
+
+[node name="BuildingA" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+mesh = ExtResource("7_kt0u2")
+skeleton = NodePath("../..")
+
+[node name="BuildingAWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01963, 0, 1.17072)
+mesh = ExtResource("8_i8tfi")
+skeleton = NodePath("../..")
+
+[node name="BuildingB" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+mesh = ExtResource("9_qsjg3")
+skeleton = NodePath("../..")
+
+[node name="BuildingBWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
+mesh = ExtResource("10_dwdb7")
+skeleton = NodePath("../..")
+
+[node name="BuildingC" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)
+mesh = ExtResource("11_jxx0a")
+skeleton = NodePath("../..")
+
+[node name="BuildingCWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 1)
+mesh = ExtResource("12_8ax0j")
+skeleton = NodePath("../..")
+
+[node name="BuildingD" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 1)
+mesh = ExtResource("13_padyr")
+skeleton = NodePath("../..")
+
+[node name="BuildingDWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 1)
+mesh = ExtResource("14_5ymvm")
+skeleton = NodePath("../..")
+
+[node name="BuildingE" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 1)
+mesh = ExtResource("15_i3fhj")
+skeleton = NodePath("../..")
+
+[node name="BuildingEWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 1)
+mesh = ExtResource("16_shbry")
+skeleton = NodePath("../..")
+
+[node name="BuildingF" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 1)
+mesh = ExtResource("17_tn7j6")
+skeleton = NodePath("../..")
+
+[node name="BuildingFWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 1)
+mesh = ExtResource("18_0e8tl")
+skeleton = NodePath("../..")
+
+[node name="BuildingG" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 1)
+mesh = ExtResource("19_mmf13")
+skeleton = NodePath("../..")
+
+[node name="BuildingGWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 1)
+mesh = ExtResource("20_2hr1w")
+skeleton = NodePath("../..")
+
+[node name="BuildingH" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 1)
+mesh = ExtResource("21_ixgkl")
+skeleton = NodePath("../..")
+
+[node name="BuildingHWithoutBase" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 1)
+mesh = ExtResource("22_5djnp")
+skeleton = NodePath("../..")
+
+[node name="CarHatchback" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.208331, 1.19209e-07, 2.7288)
+mesh = ExtResource("23_vkrng")
+skeleton = NodePath("../..")
+
+[node name="Bush" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.868639, 0, 2.57599)
+mesh = ExtResource("24_lh0sr")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelFrontLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.360544, -0.00224304, 2.20672)
+mesh = ExtResource("25_mt6vd")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelFrontRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.750502, -0.00224304, 2.80608)
+mesh = ExtResource("26_8yxmv")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelRearLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.366884, -0.00224316, 2.88953)
+mesh = ExtResource("27_m5nct")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelRearRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.761638, -0.00224304, 3.06606)
+mesh = ExtResource("28_v3hk5")
+skeleton = NodePath("../..")
+
+[node name="CarPolice" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241416, 0, 3.8773)
+mesh = ExtResource("29_f5hku")
+skeleton = NodePath("../..")
+
+[node name="CarPoliceWheelFrontLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560318, 0, 3.47106)
+mesh = ExtResource("30_y7pf3")
+skeleton = NodePath("../..")
+
+[node name="CarPoliceWheelFrontRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.929115, 0, 3.72921)
+mesh = ExtResource("31_7gnl6")
+skeleton = NodePath("../..")
+
+[node name="CarPoliceWheelRearLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.511002, 0, 4.42513)
+mesh = ExtResource("32_xw1yd")
+skeleton = NodePath("../..")
+
+[node name="CarPoliceWheelRearRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.878707, 0, 3.75873)
+mesh = ExtResource("33_5augm")
+skeleton = NodePath("../..")
+
+[node name="CarSedan" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70142, 0, 3.97872)
+mesh = ExtResource("34_1r6rt")
+skeleton = NodePath("../..")
+
+[node name="CarSedanWheelFrontLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34214, 0, 4.08998)
+mesh = ExtResource("35_5fwi7")
+skeleton = NodePath("../..")
+
+[node name="CarSedanWheelFrontRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34214, 0, 4.08998)
+mesh = ExtResource("36_66wov")
+skeleton = NodePath("../..")
+
+[node name="CarSedanWheelRearLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34214, 0, 4.08998)
+mesh = ExtResource("37_kxi3r")
+skeleton = NodePath("../..")
+
+[node name="CarSedanWheelRearRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34214, 0, 4.08998)
+mesh = ExtResource("38_hic1g")
+skeleton = NodePath("../..")
+
+[node name="CarStationwagon" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.34411, 0, 4.27306)
+mesh = ExtResource("39_atwwn")
+skeleton = NodePath("../..")
+
+[node name="CarStationwagonWheelFrontLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04629, 0, 4.19454)
+mesh = ExtResource("40_jelmn")
+skeleton = NodePath("../..")
+
+[node name="CarStationwagonWheelFrontRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04629, 0, 4.19454)
+mesh = ExtResource("41_qjhdi")
+skeleton = NodePath("../..")
+
+[node name="CarStationwagonWheelRearLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04629, 0, 4.19454)
+mesh = ExtResource("42_o3cvi")
+skeleton = NodePath("../..")
+
+[node name="CarStationwagonWheelRearRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04629, 0, 4.19454)
+mesh = ExtResource("43_xolqr")
+skeleton = NodePath("../..")
+
+[node name="CarTaxi" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01787, 0, 4.45257)
+mesh = ExtResource("44_53jyl")
+skeleton = NodePath("../..")
+
+[node name="CarTaxiWheelFrontLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63779, 0, 4.43307)
+mesh = ExtResource("45_je2bm")
+skeleton = NodePath("../..")
+
+[node name="CarTaxiWheelFrontRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63779, 0, 4.43307)
+mesh = ExtResource("46_d607x")
+skeleton = NodePath("../..")
+
+[node name="CarTaxiWheelRearLeft" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63779, 0, 4.43307)
+mesh = ExtResource("47_ukmst")
+skeleton = NodePath("../..")
+
+[node name="CarTaxiWheelRearRight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63779, 0, 4.43307)
+mesh = ExtResource("48_5bvqn")
+skeleton = NodePath("../..")
+
+[node name="Dumpster" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.73935, 0, 4.74322)
+mesh = ExtResource("49_g7xtw")
+skeleton = NodePath("../..")
+
+[node name="Firehydrant" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.24018, 0, 4.74412)
+mesh = ExtResource("50_bbqks")
+skeleton = NodePath("../..")
+
+[node name="RoadCorner" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5)
+mesh = ExtResource("51_54r7e")
+skeleton = NodePath("../..")
+
+[node name="RoadCornerCurved" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 7)
+mesh = ExtResource("52_nimp2")
+skeleton = NodePath("../..")
+
+[node name="RoadStraight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraightCrossing" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 9)
+mesh = ExtResource("54_5d48b")
+skeleton = NodePath("")
+
+[node name="RoadTsplit" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 9)
+mesh = ExtResource("55_xkxfg")
+skeleton = NodePath("../..")
+
+[node name="Streetlight" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+mesh = ExtResource("56_uhffh")
+skeleton = NodePath("../..")
+
+[node name="TrafficlightA" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 4)
+mesh = ExtResource("57_1xdd5")
+skeleton = NodePath("../..")
+
+[node name="TrafficlightB" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 6)
+mesh = ExtResource("58_u2ept")
+skeleton = NodePath("../..")
+
+[node name="TrafficlightC" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 5)
+mesh = ExtResource("59_k1lf5")
+skeleton = NodePath("../..")
+
+[node name="TrashA" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3407, 0, 4.5805)
+mesh = ExtResource("60_3xvi8")
+skeleton = NodePath("../..")
+
+[node name="TrashB" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6992, 0, 4.54757)
+mesh = ExtResource("61_s2nad")
+skeleton = NodePath("../..")
+
+[node name="Watertower" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1998, 0, 4.45302)
+mesh = ExtResource("62_yeske")
+skeleton = NodePath("../..")
+
+[node name="RoadJunction" type="MeshInstance3D" parent="examples"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 5)
+mesh = ExtResource("63_xllub")
+skeleton = NodePath("../..")
+
+[node name="Homes" type="Node3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5, 0, -68)
+script = SubResource("GDScript_r7wkb")
+
+[node name="Home1" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 65)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home1"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home1"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home2" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 63)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home2"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home2"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home3" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 61)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home3"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home3"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home4" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 59)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home4"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home4"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home5" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 57)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home5"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home5"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home6" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 55)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home6"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home6"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home7" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 53)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home7"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home7"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home8" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 51)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home8"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home8"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home9" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 49)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home9"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home9"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home10" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 47)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home10"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home10"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home11" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 45)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home11"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home11"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home12" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 43)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home12"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home12"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home13" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 41)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home13"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home13"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home14" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 39)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home14"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home14"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home15" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 37)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home15"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home15"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home16" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 35)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home16"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home16"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home17" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 33)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home17"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home17"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home18" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 31)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home18"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home18"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home19" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 29)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home19"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home19"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home20" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 27)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home20"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home20"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home21" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 65)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home21"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home21"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home22" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 63)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home22"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home22"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home23" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 61)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home23"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home23"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home24" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 59)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home24"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home24"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home25" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 57)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home25"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home25"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home26" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 55)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home26"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home26"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home27" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 53)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home27"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home27"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home28" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 51)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home28"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home28"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home29" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 49)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home29"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home29"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home30" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 47)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home30"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home30"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home31" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 45)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home31"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home31"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home32" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 43)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home32"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home32"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home33" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 41)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home33"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home33"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home34" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 39)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home34"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home34"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home35" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 37)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home35"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home35"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home36" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 35)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home36"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home36"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home37" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 33)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home37"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home37"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home38" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 31)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home38"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home38"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home39" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 29)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home39"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home39"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home40" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 27)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home40"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home40"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home41" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 65)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home41"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home41"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home42" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 63)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home42"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home42"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home43" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 61)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home43"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home43"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home44" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 59)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home44"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home44"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home45" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 57)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home45"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home45"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home46" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 55)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home46"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home46"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home47" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 53)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home47"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home47"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home48" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 51)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home48"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home48"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home49" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 49)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home49"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home49"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home50" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 47)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home50"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home50"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home51" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 45)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home51"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home51"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home52" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 43)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home52"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home52"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home53" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 41)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home53"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home53"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home54" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 39)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home54"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home54"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home55" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 37)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home55"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home55"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home56" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 35)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home56"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home56"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home57" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 33)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home57"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home57"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home58" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 31)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home58"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home58"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home59" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 29)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home59"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home59"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home60" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 27)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home60"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home60"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home61" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 65)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home61"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home61"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home62" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 63)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home62"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home62"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home63" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 61)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home63"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home63"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home64" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 59)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home64"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home64"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home65" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 57)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home65"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home65"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home66" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 55)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home66"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home66"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home67" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 53)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home67"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home67"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home68" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 51)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home68"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home68"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home69" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 49)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home69"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home69"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home70" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 47)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home70"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home70"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home71" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 45)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home71"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home71"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home72" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 43)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home72"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home72"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home73" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 41)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home73"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home73"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home74" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 39)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home74"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home74"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home75" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 37)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home75"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home75"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home76" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 35)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home76"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home76"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home77" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 33)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home77"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home77"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home78" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 31)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home78"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home78"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home79" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 29)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home79"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home79"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home80" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 27)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home80"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home80"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home81" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 65)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home81"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home81"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home82" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 63)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home82"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home82"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home83" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 61)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home83"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home83"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home84" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 59)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home84"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home84"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home85" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 57)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home85"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home85"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home86" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 55)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home86"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home86"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home87" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 53)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home87"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home87"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home88" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 51)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home88"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home88"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home89" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 49)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home89"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home89"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home90" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 47)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home90"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home90"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home91" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 45)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home91"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home91"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home92" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 43)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home92"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home92"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home93" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 41)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home93"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home93"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home94" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 39)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home94"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home94"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home95" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 37)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home95"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home95"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home96" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 35)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home96"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home96"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home97" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 33)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home97"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home97"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home98" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 31)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home98"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home98"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home99" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 29)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home99"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home99"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home100" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 27)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home100"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home100"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home101" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 27)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home101"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home101"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home102" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 29)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home102"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home102"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home103" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 31)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home103"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home103"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home104" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 33)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home104"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home104"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home105" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 35)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home105"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home105"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home106" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 37)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home106"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home106"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home107" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 39)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home107"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home107"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home108" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 41)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home108"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home108"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home109" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 43)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home109"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home109"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home110" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 45)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home110"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home110"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home111" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 47)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home111"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home111"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home112" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 49)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home112"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home112"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home113" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 51)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home113"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home113"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home114" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 53)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home114"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home114"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home115" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 55)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home115"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home115"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home116" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 57)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home116"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home116"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home117" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 59)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home117"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home117"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home118" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 61)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home118"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home118"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home119" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 63)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home119"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home119"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home120" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 65)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home120"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home120"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home121" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 27)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home121"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home121"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home122" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 29)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home122"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home122"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home123" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 31)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home123"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home123"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home124" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 33)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home124"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home124"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home125" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 35)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home125"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home125"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home126" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 37)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home126"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home126"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home127" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 39)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home127"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home127"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home128" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 41)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home128"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home128"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home129" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 43)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home129"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home129"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home130" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 45)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home130"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home130"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home131" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 47)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home131"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home131"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home132" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 49)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home132"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home132"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home133" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 51)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home133"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home133"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home134" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 53)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home134"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home134"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home135" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 55)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home135"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home135"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home136" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 57)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home136"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home136"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home137" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 59)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home137"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home137"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home138" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 61)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home138"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home138"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home139" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 63)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home139"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home139"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home140" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 65)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home140"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home140"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home141" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 27)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home141"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home141"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home142" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 29)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home142"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home142"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home143" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 31)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home143"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home143"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home144" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 33)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home144"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home144"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home145" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 35)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home145"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home145"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home146" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 37)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home146"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home146"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home147" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 39)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home147"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home147"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home148" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 41)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home148"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home148"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home149" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 43)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home149"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home149"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home150" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 45)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home150"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home150"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home151" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 47)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home151"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home151"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home152" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 49)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home152"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home152"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home153" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 51)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home153"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home153"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home154" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 53)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home154"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home154"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home155" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 55)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home155"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home155"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home156" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 57)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home156"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home156"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home157" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 59)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home157"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home157"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home158" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 61)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home158"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home158"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home159" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 63)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home159"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home159"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home160" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 65)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home160"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home160"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home161" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 27)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home161"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home161"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home162" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 29)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home162"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home162"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home163" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 31)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home163"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home163"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home164" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 33)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home164"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home164"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home165" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 35)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home165"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home165"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home166" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 37)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home166"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home166"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home167" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 39)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home167"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home167"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home168" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 41)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home168"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home168"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home169" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 43)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home169"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home169"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home170" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 45)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home170"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home170"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home171" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 47)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home171"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home171"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home172" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 49)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home172"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home172"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home173" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 51)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home173"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home173"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home174" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 53)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home174"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home174"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home175" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 55)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home175"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home175"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home176" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 57)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home176"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home176"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home177" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 59)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home177"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home177"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home178" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 61)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home178"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home178"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home179" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 63)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home179"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home179"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home180" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 65)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home180"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home180"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home181" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 27)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home181"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home181"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home182" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 29)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home182"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home182"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home183" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 31)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home183"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home183"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home184" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 33)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home184"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home184"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home185" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 35)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home185"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home185"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home186" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 37)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home186"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home186"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home187" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 39)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home187"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home187"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home188" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 41)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home188"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home188"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home189" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 43)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home189"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home189"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home190" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 45)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home190"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home190"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home191" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 47)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home191"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home191"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home192" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 49)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home192"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home192"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home193" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 51)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home193"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home193"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home194" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 53)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home194"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home194"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home195" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 55)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home195"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home195"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home196" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 57)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home196"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home196"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home197" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 59)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home197"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home197"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home198" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 61)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home198"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home198"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home199" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 63)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home199"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home199"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="Home200" type="Node3D" parent="Homes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 65)
+
+[node name="Base" type="MeshInstance3D" parent="Homes/Home200"]
+mesh = ExtResource("3_xr5hm")
+skeleton = NodePath("../../..")
+
+[node name="debug" type="MeshInstance3D" parent="Homes/Home200"]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.903696, 0, 0.3, 0.400002)
+mesh = SubResource("BoxMesh_4heks")
+
+[node name="invWalls" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -33.86, -28.665, 96.908)
+
+[node name="MeshInstance3D1" type="MeshInstance3D" parent="invWalls"]
+transform = Transform3D(130.682, 0, 0, 0, -4.37114e-08, 6.56565, -4.54747e-13, -1, -2.86994e-07, -73.2078, 5, 88.8686)
+mesh = SubResource("PlaneMesh_j73pc")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="invWalls/MeshInstance3D1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="invWalls/MeshInstance3D1/StaticBody3D"]
+transform = Transform3D(1, 1.09139e-12, -5.42101e-21, -1.09139e-12, 1, -1.27206e-23, 5.42101e-21, 1.27206e-23, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_7kcu1")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="invWalls"]
+transform = Transform3D(-132.851, -8.74228e-08, -2.50898e-14, 0, -4.37114e-08, 6.56565, -1.16142e-05, 1, 2.86994e-07, -73.1171, 5, 78.3888)
+mesh = SubResource("PlaneMesh_j73pc")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="invWalls/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="invWalls/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7kcu1")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="invWalls"]
+transform = Transform3D(-7.2498e-07, 1, 2.86994e-07, -7.02427e-21, -4.37114e-08, 6.56565, 16.5856, 4.37114e-08, 1.25449e-14, -194, 6, 83)
+mesh = SubResource("PlaneMesh_j73pc")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="invWalls/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="invWalls/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7kcu1")
+
+[node name="Roads" type="Node3D" parent="."]
+
+[node name="RoadStraight10" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 107)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight17" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 97)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight11" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 117)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight12" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 127)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight13" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 137)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight14" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 87)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight15" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 77)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight16" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 67)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight18" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 147)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight19" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 157)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight32" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 167)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight33" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 177)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight34" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 187)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight35" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 197)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight36" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 207)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight37" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 217)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight38" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 227)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight39" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 237)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight40" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 247)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight41" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 257)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight42" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 267)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight43" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 277)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight44" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 287)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight45" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 297)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight46" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 307)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight47" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 317)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight48" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 327)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight49" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 337)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")
+
+[node name="RoadStraight50" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 347)
+mesh = ExtResource("53_klig0")
+skeleton = NodePath("")

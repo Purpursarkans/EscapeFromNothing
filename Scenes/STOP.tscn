@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://d11rpmddpja0a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4hvl8"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="STOP" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.37525e-08, -0.00773676, 0, 0.924749, -3.12442e-10, -0.383044, 0.383044, -1.29418e-10, 0.924749, 0, 0, 0)
+material = SubResource("StandardMaterial3D_4hvl8")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0102884, 0, 0)
+shaded = true
+text = "STOP"
+font_size = 68
+outline_size = 0

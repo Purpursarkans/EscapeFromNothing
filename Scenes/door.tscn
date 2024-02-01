@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://0s42r1g04ar2"]
+[gd_scene load_steps=8 format=3 uid="uid://0s42r1g04ar2"]
 
 [ext_resource type="Animation" uid="uid://vblk0rnrmldy" path="res://Anim/Anim_door_open.tres" id="1_7hsc4"]
 
@@ -17,10 +17,27 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_djmw0"]
+resource_name = "open"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mjqsb"]
 _data = {
 "Door_open": ExtResource("1_7hsc4"),
-"RESET": SubResource("Animation_is26q")
+"RESET": SubResource("Animation_is26q"),
+"open": SubResource("Animation_djmw0")
 }
 
 [sub_resource type="GDScript" id="GDScript_nk6cg"]
@@ -39,6 +56,7 @@ func open():
 	else:
 		$\"../AnimationPlayer\".play_backwards(\"Door_open\")
 		opened = false
+
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4g74q"]
@@ -47,25 +65,27 @@ albedo_color = Color(0.411765, 0.619608, 0.803922, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hdx76"]
 albedo_color = Color(0.780392, 0.423529, 0.239216, 1)
 
-[node name="Door" type="Node3D"]
+[node name="DoorRoot" type="Node3D"]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Door" type="Node3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door"]
 root_node = NodePath("../Door")
 libraries = {
 "": SubResource("AnimationLibrary_mjqsb")
 }
 
-[node name="Door" type="CSGCombiner3D" parent="."]
+[node name="Door" type="CSGCombiner3D" parent="Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 use_collision = true
 script = SubResource("GDScript_nk6cg")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Door"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Door/Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 size = Vector3(0.1, 2, 1)
 material = SubResource("StandardMaterial3D_4g74q")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Door"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Door/Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555, 0.348328)
 size = Vector3(0.154687, 0.0582031, 0.1)
 material = SubResource("StandardMaterial3D_hdx76")
