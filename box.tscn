@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://raunhxdr70pn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipo87"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_36ekw"]
+material = SubResource("StandardMaterial3D_ipo87")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itsum"]
+albedo_color = Color(0, 0.396078, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ylw46"]
+material = SubResource("StandardMaterial3D_itsum")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n12lg"]
+albedo_color = Color(0.831373, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uhwpb"]
+material = SubResource("StandardMaterial3D_n12lg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1paob"]
+albedo_color = Color(0.341176, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ywxa7"]
+material = SubResource("StandardMaterial3D_1paob")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_36ekw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = SubResource("BoxMesh_ylw46")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+mesh = SubResource("BoxMesh_uhwpb")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+mesh = SubResource("BoxMesh_ywxa7")

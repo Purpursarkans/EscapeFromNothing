@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://d32epd17r5fkh"]
+[gd_scene load_steps=5 format=3 uid="uid://d32epd17r5fkh"]
 
 [ext_resource type="PackedScene" uid="uid://cjwc7qkr3jm5q" path="res://Scenes/EscapeMenu.tscn" id="1_hxqom"]
+[ext_resource type="PackedScene" uid="uid://b43t4djnvqvlc" path="res://Scenes/GUI.tscn" id="1_x4tdb"]
 
 [sub_resource type="GDScript" id="GDScript_27n43"]
 resource_name = "Player"
@@ -133,6 +134,8 @@ floor_stop_on_slope = false
 floor_block_on_wall = false
 floor_snap_length = 0.0
 script = SubResource("GDScript_27n43")
+
+[node name="GUI" parent="." instance=ExtResource("1_x4tdb")]
 
 [node name="EscapeMenu" parent="." instance=ExtResource("1_hxqom")]
 visible = false
