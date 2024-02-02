@@ -5,6 +5,7 @@ resource_name = "settings"
 script/source = "extends Control
 
 
+@export var test : NodePath
 
 func _on_back_button_down():
 	self.hide()
@@ -12,7 +13,7 @@ func _on_back_button_down():
 
 
 func _on_spin_box_value_changed(value):
-	$\"../../\".Sensivity = value
+	G.Sensivity = value
 
 func _ready():
 	$Sensivity/SpinBox.min_value = 0.1

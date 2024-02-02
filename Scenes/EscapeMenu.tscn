@@ -77,7 +77,6 @@ anchor_top = 0.37963
 anchor_right = 0.197391
 anchor_bottom = 0.464506
 grow_vertical = 2
-button_mask = 3
 text = "Settings"
 metadata/_edit_use_anchors_ = true
 
