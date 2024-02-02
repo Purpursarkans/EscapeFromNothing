@@ -34,6 +34,7 @@ script = SubResource("GDScript_m1ogu")
 [node name="SettingsMenu" parent="." instance=ExtResource("1_grlag")]
 visible = false
 layout_mode = 1
+menuPath = NodePath("../MainMenu")
 
 [node name="MainMenu" type="Control" parent="."]
 layout_mode = 1

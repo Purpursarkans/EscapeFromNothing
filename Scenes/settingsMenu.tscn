@@ -5,11 +5,13 @@ resource_name = "settings"
 script/source = "extends Control
 
 
-@export var test : NodePath
+@export var menuPath : NodePath
+@onready var menu = get_node(menuPath)
+
 
 func _on_back_button_down():
 	self.hide()
-	$\"../MainMenu\".show()
+	menu.show()
 
 
 func _on_spin_box_value_changed(value):
