@@ -181,7 +181,7 @@ mesh = ExtResource("53_klig0")
 skeleton = NodePath("")
 
 [node name="Player" parent="." instance=ExtResource("2_3vh8f")]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 49.6432, 1.8847, 306.785)
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 49.6432, 2.39064, 306.785)
 
 [node name="examples" type="Node3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 392, 0, 53)
