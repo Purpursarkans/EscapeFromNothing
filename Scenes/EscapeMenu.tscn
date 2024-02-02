@@ -8,7 +8,7 @@ script/source = "extends Control
 
 
 func _on_exit_button_down():
-	get_tree().quit()
+	get_tree().change_scene_to_file(\"res://Scenes/main_menu.tscn\")
 
 
 func _on_resume_button_down():
@@ -54,8 +54,7 @@ anchor_right = 0.97913
 anchor_bottom = 0.967593
 grow_horizontal = 0
 grow_vertical = 0
-text = "Exit
-"
+text = "Main Menu"
 metadata/_edit_use_anchors_ = true
 
 [node name="Resume" type="Button" parent="MainMenu"]

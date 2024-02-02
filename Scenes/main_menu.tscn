@@ -1,4 +1,40 @@
-[gd_scene format=3 uid="uid://dwsnhyn681sga"]
+[gd_scene load_steps=4 format=3 uid="uid://dwsnhyn681sga"]
+
+[ext_resource type="PackedScene" uid="uid://c33p8ov46r37c" path="res://Scenes/settingsMenu.tscn" id="1_34h28"]
+
+[sub_resource type="GDScript" id="GDScript_oh1kf"]
+resource_name = "MainMenu"
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_start_button_down():
+	get_tree().change_scene_to_file(\"res://Scenes/level_1.tscn\")
+	pass # Replace with function body.
+
+
+func _on_settings_button_down():
+	$SettingsMenu.show()
+	$Menu.hide()
+	pass # Replace with function body.
+
+
+func _on_exit_button_down():
+	get_tree().quit()
+	pass # Replace with function body.
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_3ohu6"]
+font_size = 56
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,18 +43,66 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_oh1kf")
 
-[node name="Start" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="SettingsMenu" parent="." instance=ExtResource("1_34h28")]
+visible = false
+layout_mode = 1
+menuPath = NodePath("../Menu")
 
-[node name="Settings" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Exit" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Start" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.419271
+anchor_top = 0.339506
+anchor_right = 0.565972
+anchor_bottom = 0.436728
+offset_top = -1.52588e-05
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.421875
+anchor_top = 0.467593
+anchor_right = 0.565972
+anchor_bottom = 0.569444
+text = "Settings
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.427951
+anchor_top = 0.614198
+anchor_right = 0.55816
+anchor_bottom = 0.731481
+text = "Exit"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.237847
+anchor_top = 0.095679
+anchor_right = 0.737847
+anchor_bottom = 0.290123
+text = "Escape From Nothing"
+label_settings = SubResource("LabelSettings_3ohu6")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Menu/Start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="Menu/Settings" to="." method="_on_settings_button_down"]
+[connection signal="button_down" from="Menu/Exit" to="." method="_on_exit_button_down"]
