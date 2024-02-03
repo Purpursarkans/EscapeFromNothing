@@ -50,8 +50,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed(\"GUI\"):
 		GUIVISIBLE = !GUIVISIBLE
 		if !GUIVISIBLE:
+			$EscapeMenu.hide()
 			$GUI.hide()
 		else:
+			if Engine.time_scale == 0 :
+				$EscapeMenu.show()
 			$GUI.show()
 	
 	if Input.is_action_just_pressed(\"ScreenShot\"):
@@ -122,7 +125,8 @@ func PauseMenu():
 	pause = !pause
 	if pause:
 		Engine.time_scale = 0
-		$EscapeMenu.show()
+		if GUIVISIBLE:
+			$EscapeMenu.show()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		$EscapeMenu.hide()
@@ -132,16 +136,18 @@ func PauseMenu():
 		$EscapeMenu/SettingsMenu.hide()
 
 
-func take_screenshot(): # Function for taking screenshots and saving them
-	var err = DirAccess.make_dir_absolute(\"screenshots\")
-	var tick : String = str(Time.get_ticks_msec())
+func take_screenshot():
+	DirAccess.make_dir_absolute(\"screenshots\")
+	
 	var date = Time.get_date_string_from_system().replace(\".\",\"_\") 
-	var time : String = Time.get_time_string_from_system(true).replace(\":\",\"\")
-	var screenshot_path = \"./screenshots/\" + \"screenshot_\" + date+ \"_\" + time + \"_\" + tick + \".jpg\" # the path for our screenshot.
-
-	var image = get_viewport().get_texture().get_image() # We get what our player sees
-	print_debug(screenshot_path)
-	image.save_jpg(screenshot_path)
+	var time : String = Time.get_time_string_from_system().replace(\":\",\"\")
+	var tick : String = str(Time.get_ticks_msec())
+	var screenshot_path = \"./screenshots/\" + \"screenshot_\" + date+ \"_\" + time + \"_\" + tick + \".png\"
+	
+	print(screenshot_path)
+	
+	var image = get_viewport().get_texture().get_image()
+	image.save_png(screenshot_path)
 "
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r4yr8"]
