@@ -133,14 +133,15 @@ func PauseMenu():
 
 
 func take_screenshot(): # Function for taking screenshots and saving them
-	
+	var err = DirAccess.make_dir_absolute(\"screenshots\")
+	var tick : String = str(Time.get_ticks_msec())
 	var date = Time.get_date_string_from_system().replace(\".\",\"_\") 
-	var time :String = Time.get_time_string_from_system().replace(\":\",\"\")
-	var screenshot_path = \".\" + \"screenshot_\" + date+ \"_\" + time + \".jpg\" # the path for our screenshot.
+	var time : String = Time.get_time_string_from_system(true).replace(\":\",\"\")
+	var screenshot_path = \"./screenshots/\" + \"screenshot_\" + date+ \"_\" + time + \"_\" + tick + \".jpg\" # the path for our screenshot.
 
 	var image = get_viewport().get_texture().get_image() # We get what our player sees
 	print_debug(screenshot_path)
-	#image.save_jpg(screenshot_path)
+	image.save_jpg(screenshot_path)
 "
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r4yr8"]
