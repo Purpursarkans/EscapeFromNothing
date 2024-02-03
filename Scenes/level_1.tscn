@@ -10,15 +10,6 @@ resource_name = "level1"
 script/source = "extends Node3D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 
 func _on_animation_player_animation_finished(anim_name):
 	get_tree().change_scene_to_file(\"res://Scenes/level_2.tscn\")
@@ -82,13 +73,6 @@ func _ready():
 		
 		tree.get_child(0).free()
 		tree.add_child.call_deferred(TreeNode)
-		
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 "
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_s5uwe"]

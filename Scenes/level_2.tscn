@@ -78,12 +78,6 @@ func _ready():
 	$City/DoorRoot/Door/Door.opened = true
 	$Player.Flash = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_area_3d_body_entered(body):
 	get_tree().change_scene_to_file(\"res://Scenes/level_3.tscn\")
 	pass # Replace with function body.
@@ -108,10 +102,6 @@ func _ready():
 	environment.volumetric_fog_enabled = true
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 "
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0esrt"]
@@ -152,9 +142,6 @@ func _ready():
 		
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 "
 
@@ -188,10 +175,6 @@ func _ready():
 		tree.add_child.call_deferred(TreeNode)
 		
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 "
 
