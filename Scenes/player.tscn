@@ -12,6 +12,8 @@ const max_view = PI/2
 
 var rot_x = 0
 var rot_y = 0
+var GUIVISIBLE : bool = true
+
 
 const JUMP_VELOCITY = 4.5
 
@@ -45,7 +47,15 @@ func _physics_process(delta):
 		$Head/Flashlight.show()
 	else:
 		$Head/Flashlight.hide()
+	if Input.is_action_just_pressed(\"GUI\"):
+		GUIVISIBLE = !GUIVISIBLE
+		if !GUIVISIBLE:
+			$GUI.hide()
+		else:
+			$GUI.show()
 	
+	if Input.is_action_just_pressed(\"ScreenShot\"):
+		take_screenshot()
 	
 	var SPEED = 5.0
 	const SPEED_UP = 2
@@ -120,6 +130,17 @@ func PauseMenu():
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		$EscapeMenu/MainMenu.show()
 		$EscapeMenu/SettingsMenu.hide()
+
+
+func take_screenshot(): # Function for taking screenshots and saving them
+	
+	var date = Time.get_date_string_from_system().replace(\".\",\"_\") 
+	var time :String = Time.get_time_string_from_system().replace(\":\",\"\")
+	var screenshot_path = \".\" + \"screenshot_\" + date+ \"_\" + time + \".jpg\" # the path for our screenshot.
+
+	var image = get_viewport().get_texture().get_image() # We get what our player sees
+	print_debug(screenshot_path)
+	#image.save_jpg(screenshot_path)
 "
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r4yr8"]

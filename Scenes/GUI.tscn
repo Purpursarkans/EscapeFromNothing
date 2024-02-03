@@ -19,7 +19,10 @@ func _process(delta):
 		debug = !debug
 	
 	if debug:
+		$FPSCounter.show()
 		$FPSCounter.text = str(Engine.get_frames_per_second()) + \" fps\"
+	else:
+		$FPSCounter.hide()
 	pass
 "
 
@@ -32,7 +35,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_pxr4m")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="FPSCounter" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.0347222
+anchor_bottom = 0.0354938
+metadata/_edit_use_anchors_ = true
+
+[node name="Crosshair" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Crosshair"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.499132
@@ -43,7 +61,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="Crosshair"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.493924
@@ -52,11 +70,4 @@ anchor_right = 0.506076
 anchor_bottom = 0.501543
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="FPSCounter" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.0347222
-anchor_bottom = 0.0354938
 metadata/_edit_use_anchors_ = true
