@@ -17,10 +17,17 @@ func _on_back_button_down():
 func _on_spin_box_value_changed(value):
 	G.Sensivity = value
 	$Sensivity/SpinBox.value = G.Sensivity
-
+	
 func _ready():
 	$Sensivity/SpinBox.min_value = 0.1
 	$Sensivity/SpinBox.value = G.Sensivity
+	$VSync.button_pressed = G.vsync
+
+
+func _on_check_box_toggled(toggled_on):
+	G.vsync = toggled_on
+	G.ChangeVsync()
+	pass # Replace with function body.
 "
 
 [node name="SettingsMenu" type="Control"]
@@ -76,5 +83,17 @@ text = "Back
 "
 metadata/_edit_use_anchors_ = true
 
+[node name="VSync" type="CheckBox" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0251736
+anchor_top = 0.182099
+anchor_right = 0.102431
+anchor_bottom = 0.257716
+action_mode = 0
+text = "VSync"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="value_changed" from="Sensivity/SpinBox" to="." method="_on_spin_box_value_changed"]
 [connection signal="button_down" from="Back" to="." method="_on_back_button_down"]
+[connection signal="toggled" from="VSync" to="." method="_on_check_box_toggled"]

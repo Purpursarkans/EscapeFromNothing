@@ -13,6 +13,8 @@ config_version=5
 config/name="Escape From Nothing"
 run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0.254902, 0, 0.231373, 1)
+boot_splash/image="res://Image/screenshot_2024-02-03_223657_207061.png"
 config/icon="res://icon.svg"
 
 [autoload]
