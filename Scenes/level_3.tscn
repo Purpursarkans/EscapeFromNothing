@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://cqmgj34sc2v0j"]
+[gd_scene load_steps=86 format=3 uid="uid://cqmgj34sc2v0j"]
 
 [ext_resource type="PackedScene" uid="uid://d32epd17r5fkh" path="res://Scenes/player.tscn" id="2_3vh8f"]
 [ext_resource type="Animation" uid="uid://vblk0rnrmldy" path="res://Anim/Anim_door_open.tres" id="3_k0fh5"]
@@ -323,11 +323,6 @@ func _ready():
 		animationPlayer.play(\"road/fly\")
 "
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_j73pc"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7kcu1"]
-data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
-
 [sub_resource type="GDScript" id="GDScript_r7wkb"]
 resource_name = "Homes"
 script/source = "extends Node3D
@@ -342,7 +337,7 @@ func _ready():
 	var animationPlayer = AnimationPlayer.new()
 	var animLib = AnimationLibrary.new()
 	var animation = Animation.new()
-	animation.length = 20
+	animation.length = 10
 	animation.step = 0.1
 	
 	var numHome = get_child_count()
@@ -524,6 +519,7 @@ shape = SubResource("ConcavePolygonShape3D_uaug5")
 
 [node name="examples" type="Node3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 392, 0, 53)
+visible = false
 
 [node name="Base" type="MeshInstance3D" parent="examples"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
@@ -1297,41 +1293,6 @@ skeleton = NodePath("")
 transform = Transform3D(5, 0, -1.42109e-14, 0, 5, 0, 1.42109e-14, 0, 5, 50, 0, 567)
 mesh = ExtResource("53_klig0")
 skeleton = NodePath("")
-
-[node name="invWalls" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -33.86, -16.3256, 96.908)
-visible = false
-
-[node name="MeshInstance3D1" type="MeshInstance3D" parent="invWalls"]
-transform = Transform3D(130.682, 0, 0, 0, -4.37114e-08, 6.56565, -4.54747e-13, -1, -2.86994e-07, -73.2078, 5, 88.8686)
-mesh = SubResource("PlaneMesh_j73pc")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="invWalls/MeshInstance3D1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="invWalls/MeshInstance3D1/StaticBody3D"]
-transform = Transform3D(1, 1.09139e-12, -5.42101e-21, -1.09139e-12, 1, -1.27206e-23, 5.42101e-21, 1.27206e-23, 1, 0, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_7kcu1")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="invWalls"]
-transform = Transform3D(-132.851, -8.74228e-08, -2.50898e-14, 0, -4.37114e-08, 6.56565, -1.16142e-05, 1, 2.86994e-07, -73.1171, 5, 78.3888)
-mesh = SubResource("PlaneMesh_j73pc")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="invWalls/MeshInstance3D2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="invWalls/MeshInstance3D2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_7kcu1")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="invWalls"]
-transform = Transform3D(-7.2498e-07, 1, 2.86994e-07, -7.02427e-21, -4.37114e-08, 6.56565, 16.5856, 4.37114e-08, 1.25449e-14, -194, 6, 83)
-mesh = SubResource("PlaneMesh_j73pc")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="invWalls/MeshInstance3D3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="invWalls/MeshInstance3D3/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_7kcu1")
 
 [node name="Homes" type="Node3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5, 0, -68)
