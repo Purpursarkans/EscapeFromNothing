@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d32epd17r5fkh"]
+[gd_scene load_steps=6 format=3 uid="uid://d32epd17r5fkh"]
 
 [ext_resource type="PackedScene" uid="uid://cjwc7qkr3jm5q" path="res://Scenes/EscapeMenu.tscn" id="1_hxqom"]
 [ext_resource type="PackedScene" uid="uid://b43t4djnvqvlc" path="res://Scenes/GUI.tscn" id="1_x4tdb"]
@@ -15,7 +15,7 @@ var rot_y = 0
 var GUIVISIBLE : bool = true
 
 
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 6
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting(\"physics/3d/default_gravity\")
@@ -150,22 +150,25 @@ func take_screenshot():
 	image.save_png(screenshot_path)
 "
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r4yr8"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ih2oj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f2f6r"]
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-floor_stop_on_slope = false
-floor_block_on_wall = false
-floor_snap_length = 0.0
 script = SubResource("GDScript_27n43")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_ih2oj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_f2f6r")
 
 [node name="GUI" parent="." instance=ExtResource("1_x4tdb")]
 
 [node name="EscapeMenu" parent="." instance=ExtResource("1_hxqom")]
 visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_r4yr8")
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.874933, 0)
