@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://dq3qb64ts1nsd"]
+[gd_scene load_steps=26 format=3 uid="uid://dq3qb64ts1nsd"]
 
 [ext_resource type="PackedScene" uid="uid://bhfy846h7fktn" path="res://Scenes/grass.tscn" id="1_sgfud"]
 [ext_resource type="PackedScene" uid="uid://d32epd17r5fkh" path="res://Scenes/player.tscn" id="2_6f40u"]
 [ext_resource type="ArrayMesh" uid="uid://cwifgxn8s05lj" path="res://Models/City/road_straight.obj" id="3_trnmo"]
 [ext_resource type="Animation" uid="uid://vblk0rnrmldy" path="res://Anim/Anim_door_open.tres" id="4_360oo"]
+[ext_resource type="AudioStream" uid="uid://c88u1lje61iyf" path="res://Sounds/tree_creak.ogg" id="5_qesa4"]
 
 [sub_resource type="GDScript" id="GDScript_kvf75"]
 resource_name = "level1"
@@ -130,6 +131,8 @@ func stop():
 	$\"../AnimationPlayer\".stop()
 
 func open():
+	if !$\"../DoorOpenSound\".playing:
+		$\"../DoorOpenSound\".play()
 	if !opened:
 		$\"../AnimationPlayer\".play(\"Door_open\")
 		opened = true
@@ -3106,6 +3109,10 @@ root_node = NodePath("../Door")
 libraries = {
 "": SubResource("AnimationLibrary_mjqsb")
 }
+
+[node name="DoorOpenSound" type="AudioStreamPlayer3D" parent="DoorRoot/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+stream = ExtResource("5_qesa4")
 
 [node name="Door" type="CSGCombiner3D" parent="DoorRoot/Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)

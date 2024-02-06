@@ -59,15 +59,46 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Menu"]
+[node name="Escape" type="Label" parent="Menu"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.157986
-anchor_top = 0.0154321
-anchor_right = 0.657986
-anchor_bottom = 0.209876
+anchor_left = 0.261285
+anchor_top = 0.0493827
+anchor_right = 0.421875
+anchor_bottom = 0.16821
 offset_right = 6.10352e-05
-text = "Escape From Nothing"
+rotation = 0.074194
+text = "Escape"
+label_settings = SubResource("LabelSettings_3ohu6")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="From" type="Label" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15625
+anchor_top = 0.0555556
+anchor_right = 0.279514
+anchor_bottom = 0.174383
+offset_right = 6.10352e-05
+rotation = 0.884691
+text = "From"
+label_settings = SubResource("LabelSettings_3ohu6")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Nothing" type="Label" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0581597
+anchor_top = 0.712963
+anchor_right = 0.248264
+anchor_bottom = 0.83179
+offset_right = 6.10352e-05
+rotation = -0.691019
+text = "Nothing"
 label_settings = SubResource("LabelSettings_3ohu6")
 horizontal_alignment = 1
 vertical_alignment = 1

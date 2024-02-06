@@ -7,7 +7,7 @@ script/source = "extends Control
 
 @export var menuPath : NodePath
 @onready var menu = get_node(menuPath)
-
+	
 
 func _on_back_button_down():
 	self.hide()
@@ -17,17 +17,29 @@ func _on_back_button_down():
 func _on_spin_box_value_changed(value):
 	G.Sensivity = value
 	$Sensivity/SpinBox.value = G.Sensivity
+	$Sensivity/HScrollBar.value = G.Sensivity
 	
 func _ready():
-	$Sensivity/SpinBox.min_value = 0.1
 	$Sensivity/SpinBox.value = G.Sensivity
 	$VSync.button_pressed = G.vsync
+	$CheckBox.button_pressed = G.FullScreen
+
+
+
+func _on_h_scroll_bar_value_changed(value):
+	G.Sensivity = value
+	$Sensivity/SpinBox.value = G.Sensivity
+	$Sensivity/HScrollBar.value = G.Sensivity
+
+
+func _on_v_sync_toggled(toggled_on):
+	G.vsync = toggled_on
+	G.ChangeVsync()
 
 
 func _on_check_box_toggled(toggled_on):
-	G.vsync = toggled_on
-	G.ChangeVsync()
-	pass # Replace with function body.
+	G.FullScreen = toggled_on
+	G.ChangeScreen()
 "
 
 [node name="SettingsMenu" type="Control"]
@@ -56,7 +68,7 @@ anchor_top = 0.095679
 anchor_right = 0.0972769
 anchor_bottom = 0.152778
 offset_right = -0.00050354
-min_value = -100.0
+min_value = 0.1
 step = 0.1
 value = 10.0
 metadata/_edit_use_anchors_ = true
@@ -69,6 +81,18 @@ anchor_top = 0.0493827
 anchor_right = 0.104167
 anchor_bottom = 0.101852
 text = "Sensitivity"
+metadata/_edit_use_anchors_ = true
+
+[node name="HScrollBar" type="HScrollBar" parent="Sensivity"]
+layout_mode = 0
+anchor_left = 0.104687
+anchor_top = 0.0958333
+anchor_right = 0.266406
+anchor_bottom = 0.152778
+mouse_default_cursor_shape = 13
+min_value = 0.1
+step = 0.1
+value = 10.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="."]
@@ -94,6 +118,19 @@ action_mode = 0
 text = "VSync"
 metadata/_edit_use_anchors_ = true
 
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 0
+anchor_left = 0.025
+anchor_top = 0.258333
+anchor_right = 0.109375
+anchor_bottom = 0.301389
+offset_right = -84.0
+offset_bottom = -7.0
+text = "FullScreen"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="value_changed" from="Sensivity/SpinBox" to="." method="_on_spin_box_value_changed"]
+[connection signal="value_changed" from="Sensivity/HScrollBar" to="." method="_on_h_scroll_bar_value_changed"]
 [connection signal="button_down" from="Back" to="." method="_on_back_button_down"]
-[connection signal="toggled" from="VSync" to="." method="_on_check_box_toggled"]
+[connection signal="toggled" from="VSync" to="." method="_on_v_sync_toggled"]
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]

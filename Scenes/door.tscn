@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://0s42r1g04ar2"]
+[gd_scene load_steps=9 format=3 uid="uid://0s42r1g04ar2"]
 
 [ext_resource type="Animation" uid="uid://vblk0rnrmldy" path="res://Anim/Anim_door_open.tres" id="1_7hsc4"]
+[ext_resource type="AudioStream" uid="uid://c88u1lje61iyf" path="res://Sounds/tree_creak.ogg" id="2_jw5to"]
 
 [sub_resource type="Animation" id="Animation_is26q"]
 length = 0.001
@@ -50,6 +51,8 @@ func stop():
 	$\"../AnimationPlayer\".stop()
 
 func open():
+	if !$\"../DoorOpenSound\".playing:
+		$\"../DoorOpenSound\".play()
 	if !opened:
 		$\"../AnimationPlayer\".play(\"Door_open\")
 		opened = true
@@ -74,6 +77,10 @@ root_node = NodePath("../Door")
 libraries = {
 "": SubResource("AnimationLibrary_mjqsb")
 }
+
+[node name="DoorOpenSound" type="AudioStreamPlayer3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+stream = ExtResource("2_jw5to")
 
 [node name="Door" type="CSGCombiner3D" parent="Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)

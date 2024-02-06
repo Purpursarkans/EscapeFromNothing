@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://spbho85g4ipr"]
+[gd_scene load_steps=78 format=3 uid="uid://spbho85g4ipr"]
 
 [ext_resource type="ArrayMesh" uid="uid://ckyx6samqxqb4" path="res://Models/City/base.obj" id="1_0rewq"]
 [ext_resource type="PackedScene" uid="uid://bhfy846h7fktn" path="res://Scenes/grass.tscn" id="1_jtnax"]
@@ -79,7 +79,7 @@ func _ready():
 	$Player.Flash = false
 
 func _on_area_3d_body_entered(body):
-	get_tree().change_scene_to_file(\"res://Scenes/level_3.tscn\")
+	get_tree().change_scene_to_file.call_deferred(\"res://Scenes/level_3.tscn\")
 	pass # Replace with function body.
 "
 
@@ -180,6 +180,111 @@ func _ready():
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ynlt5"]
 
+[sub_resource type="GDScript" id="GDScript_wp33v"]
+resource_name = "Trees"
+script/source = "@tool
+
+extends Node3D
+
+@export var RandomRotation : bool = false :
+	get:
+		return RandomRotation
+	set(value):
+		RandomRotation = value
+		spawn()
+
+@export var LineTrees : int = 2 :
+	get:
+		return LineTrees
+	set(value):
+		LineTrees = value
+		spawn()
+
+@export var ColTrees : int = 2 :
+	get:
+		return ColTrees
+	set(value):
+		ColTrees = value
+		spawn()
+
+@export var RandomDis : bool = false:
+	get:
+		return RandomDis
+	set(value):
+		RandomDis = value
+		spawn()
+
+@export var DisTrees : float = 2 :
+	get:
+		return DisTrees
+	set(value):
+		DisTrees = value
+		spawn()
+
+@export var RandomPos : Vector2 :
+	get:
+		return RandomPos
+	set(value):
+		RandomPos = value
+		spawn()
+
+@export var Spawn : bool :
+	get:
+		return Spawn
+	set(value):
+		Spawn = value
+		spawn()
+
+
+var posTree : Vector3
+
+func spawn():
+	var cube = preload(\"res://Scenes/door.tscn\")
+	randomize()
+	posTree = Vector3(0,0,0)
+	print_debug(\"spawn\")
+	for i in self.get_children():
+		self.remove_child(i)
+		i.queue_free()
+	
+	for i in LineTrees:
+		for n in ColTrees:
+			var cubeInst = cube.instantiate()
+			var tree = cubeInst
+			
+			#var tree = MeshInstance3D.new()
+			#tree.mesh = BoxMesh.new()
+			
+			if tree.get_parent():
+				tree.get_parent().remove_child(tree)
+			add_child(tree)
+			#tree.owner = self
+			tree.position.x = posTree.x + randf_range(RandomPos.x, RandomPos.y)
+			tree.position.z = posTree.z + randf_range(RandomPos.x, RandomPos.y)
+			posTree = tree.position
+			
+			if RandomDis:
+				#print_debug(\"random\")
+				posTree += Vector3(0,0,randf_range(RandomPos.x, RandomPos.y))
+			else:
+				#print_debug(\"not random\")
+				posTree += Vector3(0,0,DisTrees)
+			
+			if RandomRotation:
+				tree.rotation_degrees = Vector3(0,randf_range(-360,360),0)
+				
+				
+		if RandomDis:
+			#print_debug(\"random\")
+			posTree += Vector3(randf_range(RandomPos.x, RandomPos.y),0,0)
+			posTree.z = randf_range(RandomPos.x, RandomPos.y)
+		else:
+			#print_debug(\"not random\")
+			posTree += Vector3(DisTrees,0,0)
+			posTree.z = 0
+
+"
+
 [node name="Level2" type="Node3D"]
 script = SubResource("GDScript_n7ely")
 
@@ -195,6 +300,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -80.79
 
 [node name="examples" type="Node3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -200)
+visible = false
 
 [node name="Base" type="MeshInstance3D" parent="examples"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
@@ -577,7 +683,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_2f0iv")
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(13.2654, 0, 0, 0, 14.3626, 0, 0, 0, 5.74888, 49.1098, 4.39096, 235.216)
+transform = Transform3D(13.2654, 0, 0, 0, 14.3626, 0, 0, 0, 5.74888, 49.1098, 4.39096, 185.216)
 
 [node name="Debug" type="MeshInstance3D" parent="Area3D"]
 visible = false
@@ -8889,5 +8995,17 @@ mesh = SubResource("CylinderMesh_ynlt5")
 
 [node name="DoorRoot" parent="City" instance=ExtResource("65_n33d8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.6705, 0.9, 96.4327)
+
+[node name="Doors" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 50, 1, 110)
+
+[node name="Trees" type="Node3D" parent="Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -3)
+script = SubResource("GDScript_wp33v")
+RandomRotation = true
+LineTrees = 86
+ColTrees = 4
+DisTrees = 3.0
+RandomPos = Vector2(-1, 1)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

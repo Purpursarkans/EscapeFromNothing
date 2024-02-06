@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://cqmgj34sc2v0j"]
+[gd_scene load_steps=94 format=3 uid="uid://cqmgj34sc2v0j"]
 
 [ext_resource type="PackedScene" uid="uid://d32epd17r5fkh" path="res://Scenes/player.tscn" id="2_3vh8f"]
 [ext_resource type="Animation" uid="uid://vblk0rnrmldy" path="res://Anim/Anim_door_open.tres" id="3_k0fh5"]
@@ -63,6 +63,10 @@
 [ext_resource type="ArrayMesh" uid="uid://byppy8mfj5tpd" path="res://Models/City/trash_B.obj" id="61_s2nad"]
 [ext_resource type="ArrayMesh" uid="uid://0jnep1ovf6fy" path="res://Models/City/watertower.obj" id="62_yeske"]
 [ext_resource type="ArrayMesh" uid="uid://vpbmnejhfpss" path="res://Models/City/road_junction.obj" id="63_xllub"]
+[ext_resource type="AudioStream" uid="uid://c88u1lje61iyf" path="res://Sounds/tree_creak.ogg" id="64_gxq1o"]
+[ext_resource type="AudioStream" uid="uid://dtmybd7n5gpo7" path="res://Sounds/HomeFly.ogg" id="65_qauyj"]
+[ext_resource type="AudioStream" uid="uid://cacdbiyk2lvn" path="res://Sounds/wind woosh loop2.ogg" id="66_7wd7e"]
+[ext_resource type="AudioStream" uid="uid://cqiimr3h45x2h" path="res://Sounds/boxscare.ogg" id="67_uuf4r"]
 
 [sub_resource type="GDScript" id="GDScript_4fwwe"]
 resource_name = "Level3"
@@ -96,7 +100,7 @@ func _process(delta):
 
 
 func _on_end_detect_body_entered(body):
-	
+	$HomeFallEnd.play()
 	SetEnd = true
 	$End/RoadEnd/EndDetect.queue_free()
 	
@@ -127,10 +131,10 @@ func _on_end_detect_body_entered(body):
 	animation.track_insert_key(track_PositionStart, 0.0, 0.0)
 	animation.track_insert_key(track_PositionStart, animation.length, -1000)
 	
-	animation.track_set_interpolation_type(track_PositionHome,2)
-	animation.track_set_interpolation_type(track_PositionRoad,2)
-	animation.track_set_interpolation_type(track_PositionParkour,2)
-	animation.track_set_interpolation_type(track_PositionStart,2)
+	animation.track_set_interpolation_type(track_PositionHome,Animation.INTERPOLATION_CUBIC)
+	animation.track_set_interpolation_type(track_PositionRoad,Animation.INTERPOLATION_CUBIC)
+	animation.track_set_interpolation_type(track_PositionParkour,Animation.INTERPOLATION_CUBIC)
+	animation.track_set_interpolation_type(track_PositionStart,Animation.INTERPOLATION_CUBIC)
 	
 	add_child(animationPlayer)
 	animLib.add_animation(\"fly\",animation)
@@ -154,7 +158,7 @@ func endPlatformAnimationFinish(anim_name):
 
 
 func _on_anim_end_door_animation_finished(anim_name):
-	
+	$HomeFallEnd.play()
 	var animationPlayer = AnimationPlayer.new()
 	var animLib = AnimationLibrary.new()
 	var animation = Animation.new()
@@ -170,7 +174,7 @@ func _on_anim_end_door_animation_finished(anim_name):
 	animation.track_insert_key(track_EndGame, animation.length/2, -200)
 	animation.track_insert_key(track_EndGame, animation.length, -600)
 	
-	animation.track_set_interpolation_type(track_EndGame,2)
+	animation.track_set_interpolation_type(track_EndGame,Animation.INTERPOLATION_CUBIC)
 	add_child(animationPlayer)
 	animLib.add_animation(\"fly\",animation)
 	animationPlayer.add_animation_library(\"End\", animLib)
@@ -190,6 +194,7 @@ func endGameAnimationFinish(anim_name):
 	$End.queue_free()
 
 func credits(anim_name):
+	G.BoxScare()
 	get_tree().change_scene_to_file(\"res://Scenes/credits.tscn\")
 "
 
@@ -262,8 +267,8 @@ func _ready():
 		randf_range(-180, 180)\\
 		))
 		
-		animation.track_set_interpolation_type(track_Position,2)
-		animation.track_set_interpolation_type(track_Rotation,2)
+		animation.track_set_interpolation_type(track_Position,Animation.INTERPOLATION_CUBIC)
+		animation.track_set_interpolation_type(track_Rotation,Animation.INTERPOLATION_CUBIC)
 		
 		road.add_child(animationPlayer)
 		animLib.add_animation(\"fly\",animation)
@@ -316,8 +321,8 @@ func _ready():
 		randf_range(-180, 180)\\
 		))
 		
-		animation.track_set_interpolation_type(track_Position,2)
-		animation.track_set_interpolation_type(track_Rotation,2)
+		animation.track_set_interpolation_type(track_Position,Animation.INTERPOLATION_CUBIC)
+		animation.track_set_interpolation_type(track_Rotation,Animation.INTERPOLATION_CUBIC)
 		
 
 		if HomeNode.get_parent():
@@ -361,15 +366,13 @@ func _ready():
 		animation.length = n*1.5
 		animation.step = 0.1
 		
-		var tempPos = car.position
-		
 		var AnimStartPos = Vector3(randf_range(-100,100),randf_range(-100,100),randf_range(-100,100))
 		
 		var track_Position = animation.add_track(animation.TYPE_VALUE)
 		animation.track_set_path(track_Position, \"../Car\"+ str(n) +\":position\")
 		animation.track_insert_key(track_Position, 0.0, AnimStartPos)
 		animation.track_insert_key(track_Position, animation.length, car.position)
-		animation.track_set_interpolation_type(track_Position,2)
+		animation.track_set_interpolation_type(track_Position,Animation.INTERPOLATION_CUBIC)
 		
 		var track_Rotation = animation.add_track(animation.TYPE_VALUE)
 		animation.track_set_path(track_Rotation, \"../Car\"+ str(n) +\":rotation_degrees\")
@@ -380,7 +383,7 @@ func _ready():
 		randf_range(0, 360),\\
 		randf_range(-180, 180)\\
 		))
-		animation.track_set_interpolation_type(track_Rotation,2)
+		animation.track_set_interpolation_type(track_Rotation,Animation.INTERPOLATION_CUBIC)
 		
 		car.add_child(animationPlayer)
 		animLib.add_animation(\"fly\",animation)
@@ -557,6 +560,8 @@ func stop():
 	$\"../AnimEndDoor\".stop()
 
 func open():
+	if !$\"../DoorOpenSound\".playing:
+		$\"../DoorOpenSound\".play()
 	if !opened:
 		$\"../AnimEndDoor\".play(\"Door_open\")
 		opened = true
@@ -10898,6 +10903,10 @@ libraries = {
 "": SubResource("AnimationLibrary_mjqsb")
 }
 
+[node name="DoorOpenSound" type="AudioStreamPlayer3D" parent="End/DoorRoot/Door"]
+transform = Transform3D(1, -2.98023e-08, 4.47035e-08, 0, 1, -8.9407e-08, 0, 2.98023e-08, 1, 0, 0.5, -1.52588e-05)
+stream = ExtResource("64_gxq1o")
+
 [node name="Door" type="CSGCombiner3D" parent="End/DoorRoot/Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 use_collision = true
@@ -10929,6 +10938,18 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.2, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="End/RoadEnd/EndDetect"]
 transform = Transform3D(8.50242, 0, 0, 0, 2.54168, 0, 0, 0, 9.4374, 0, 0.698328, 0)
 shape = SubResource("ConcavePolygonShape3D_jxtjg")
+
+[node name="HomeFlySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("65_qauyj")
+volume_db = -6.0
+autoplay = true
+
+[node name="HomeFallEnd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("66_7wd7e")
+volume_db = -2.0
+
+[node name="BoxScare" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("67_uuf4r")
 
 [connection signal="animation_finished" from="End/DoorRoot/Door/AnimEndDoor" to="." method="_on_anim_end_door_animation_finished"]
 [connection signal="body_entered" from="End/RoadEnd/EndDetect" to="." method="_on_end_detect_body_entered"]

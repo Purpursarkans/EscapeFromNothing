@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://ljx837kqfqlg"]
+[gd_scene load_steps=5 format=3 uid="uid://ljx837kqfqlg"]
 
 [sub_resource type="GDScript" id="GDScript_q2nbr"]
 resource_name = "Credits"
@@ -6,16 +6,22 @@ script/source = "extends Control
 
 
 func _ready():
+	$Holst.position.y = get_window().size.y
 	pass
 
 
-func _process(delta):
+func _process(delta):	
 	
 	if Input.is_action_just_pressed(\"menu_escape\"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		get_tree().change_scene_to_file(\"res://Scenes/main_menu.tscn\")
+		return 0
 	
-	$Label.position += Vector2(0.01,-0.01)
+	
+	
+	if $Holst.position.y > -$Holst.size.y+get_window().size.y:
+		$Holst.position += Vector2(0,-150*delta)
+	
 	
 	pass
 
@@ -23,6 +29,15 @@ func _process(delta):
 func test():
 	await  get_tree().create_timer(1).timeout
 "
+
+[sub_resource type="LabelSettings" id="LabelSettings_wslho"]
+font_size = 84
+
+[sub_resource type="LabelSettings" id="LabelSettings_rqt4e"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_wsgm6"]
+font_size = 36
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -36,16 +51,100 @@ metadata/_edit_horizontal_guides_ = [-247.0]
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.329412, 0.329412, 0.329412, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
+[node name="Holst" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
 anchor_top = 1.0
-anchor_right = 0.189236
-anchor_bottom = 1.03549
-text = "ебал я рот эти ваши титры"
+anchor_right = 1.0
+anchor_bottom = 4.05556
+offset_bottom = -0.00317383
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Control" parent="Holst"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.114763
+metadata/_edit_use_anchors_ = true
+
+[node name="Escape" type="Label" parent="Holst/Name"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.163281
+anchor_top = 0.146547
+anchor_right = 0.835938
+anchor_bottom = 0.60203
+grow_horizontal = 2
+text = "Escape From Nothing"
+label_settings = SubResource("LabelSettings_wslho")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="by Purpursarkans" type="Label" parent="Holst/Name"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.671875
+anchor_top = 0.60203
+anchor_right = 0.832031
+anchor_bottom = 0.752473
+text = "by Purpursarkans"
+label_settings = SubResource("LabelSettings_rqt4e")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="Holst"]
+layout_mode = 1
+anchor_top = 0.284934
+anchor_right = 1.0
+anchor_bottom = 0.646336
+offset_right = 0.00012207
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Holst/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.0631313
+offset_left = 396.0
+offset_right = -341.999
+text = "Thanks everyone for playing <3"
+label_settings = SubResource("LabelSettings_wsgm6")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Holst/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.90404
+anchor_right = 1.0
+anchor_bottom = 0.967
+offset_left = 396.0
+offset_right = -341.999
+offset_bottom = 0.136719
+text = "I dont know what to write here"
+label_settings = SubResource("LabelSettings_wsgm6")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Holst/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.904
+anchor_right = 1.0
+anchor_bottom = 1.96741
+offset_left = 348.0
+offset_top = 0.222534
+offset_right = -277.0
+text = "Press Esc to the return on main menu"
+label_settings = SubResource("LabelSettings_wsgm6")
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true

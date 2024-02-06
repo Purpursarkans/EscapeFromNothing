@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://d32epd17r5fkh"]
+[gd_scene load_steps=11 format=3 uid="uid://d32epd17r5fkh"]
 
 [ext_resource type="PackedScene" uid="uid://cjwc7qkr3jm5q" path="res://Scenes/EscapeMenu.tscn" id="1_hxqom"]
 [ext_resource type="PackedScene" uid="uid://b43t4djnvqvlc" path="res://Scenes/GUI.tscn" id="1_x4tdb"]
+[ext_resource type="AudioStream" uid="uid://crdkeqg4tkrti" path="res://Sounds/walk1.ogg" id="3_oprb5"]
+[ext_resource type="AudioStream" uid="uid://bu1um4dt87er1" path="res://Sounds/walk2.ogg" id="4_lqrsf"]
+[ext_resource type="AudioStream" uid="uid://b27osojanp70a" path="res://Sounds/walk4.ogg" id="6_8fyv0"]
 
 [sub_resource type="GDScript" id="GDScript_27n43"]
 resource_name = "Player"
@@ -83,16 +86,18 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		$Audio/AudioPlayer.stream_paused = false
-		$Audio/Timer.start()
+		
+		if is_on_floor():
+			if !$Audio/AudioPlayer.playing:
+				if $Audio/Timer.is_stopped():
+					$Audio/Timer.start()
+					$Audio/AudioPlayer.play()
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
 
-func _on_timer_timeout():
-	$Audio/AudioPlayer.stream_paused = true
 
 
 func _input(e):
@@ -113,14 +118,6 @@ func _input(e):
 		if e is InputEventMouse:
 			if e.is_action_pressed(\"leftMouse\"):
 				action()
-
-
-
-
-func _on_audio_player_finished():
-	$Audio/AudioPlayer.playing = true
-	pass # Replace with function body.
-
 
 var pause : bool = false
 func PauseMenu():
@@ -155,6 +152,18 @@ func take_screenshot():
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ih2oj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ynty"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_i53l0"]
+streams_count = 3
+stream_0/stream = ExtResource("3_oprb5")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_lqrsf")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_8fyv0")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ypov5"]
+playback_mode = 2
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -192,13 +201,12 @@ spot_angle = 39.1463
 [node name="Audio" type="Node3D" parent="."]
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="Audio"]
-volume_db = 1.0
-autoplay = true
+stream = SubResource("AudioStreamRandomizer_i53l0")
+volume_db = -6.21
 
 [node name="Timer" type="Timer" parent="Audio"]
-wait_time = 0.4
+wait_time = 0.6
 one_shot = true
-autostart = true
 
-[connection signal="finished" from="Audio/AudioPlayer" to="." method="_on_audio_player_finished"]
-[connection signal="timeout" from="Audio/Timer" to="." method="_on_timer_timeout"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = SubResource("AudioStreamRandomizer_ypov5")
