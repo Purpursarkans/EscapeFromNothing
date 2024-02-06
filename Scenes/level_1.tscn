@@ -17,6 +17,10 @@ func _on_animation_player_animation_finished(anim_name):
 	pass # Replace with function body.
 "
 
+[sub_resource type="Environment" id="Environment_j76dv"]
+background_mode = 1
+glow_enabled = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fngy"]
 albedo_color = Color(0.984314, 0.494118, 0, 1)
 emission_enabled = true
@@ -31,10 +35,6 @@ emission_enabled = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_6asot"]
 material = SubResource("StandardMaterial3D_oo1aq")
-
-[sub_resource type="Environment" id="Environment_j76dv"]
-background_mode = 1
-glow_enabled = true
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k1wbo"]
 data = PackedVector3Array(-1, 0.07, 1, -1, 0, 1, -1, 0.07, -1, -1, 0.07, -1, -1, 0, 1, -1, 0, -1, 0.93, 0.1, -1, 1, 0.1, -1, 0.93, 0.1, 1, 0.93, 0.1, 1, 1, 0.1, -1, 1, 0.1, 1, 1, 0.07, -1, 1, 0, -1, 1, 0.07, 1, 1, 0.07, 1, 1, 0, -1, 1, 0, 1, -0.9, 0.07, -1, -1, 0.07, -1, -0.9, 0, -1, -0.9, 0, -1, -1, 0.07, -1, -1, 0, -1, 0.9, 0.07, 1, 1, 0.07, 1, 0.9, 0, 1, 0.9, 0, 1, 1, 0.07, 1, 1, 0, 1, 0.9, 0.07, -1, 1, 0.07, -1, 0.93, 0.1, -1, 0.93, 0.1, -1, 1, 0.07, -1, 1, 0.1, -1, -0.9, 0.07, -1, -0.9, 0.07, 1, -0.93, 0.1, -1, -0.93, 0.1, -1, -0.9, 0.07, 1, -0.93, 0.1, 1, -1, 0.07, -1, -0.9, 0.07, -1, -1, 0.1, -1, -1, 0.1, -1, -0.9, 0.07, -1, -0.93, 0.1, -1, 0.9, 0, 1, 0.9, 0, -1, -0.9, 0, 1, -0.9, 0, 1, 0.9, 0, -1, -0.9, 0, -1, -0.9, 0.07, 1, 0.9, 0.07, 1, -0.9, 0, 1, -0.9, 0, 1, 0.9, 0.07, 1, 0.9, 0, 1, -0.9, 0, -1, -1, 0, -1, -0.9, 0, 1, -0.9, 0, 1, -1, 0, -1, -1, 0, 1, 1, 0, -1, 0.9, 0, -1, 1, 0, 1, 1, 0, 1, 0.9, 0, -1, 0.9, 0, 1, 0.9, 0.07, -1, -0.9, 0.07, -1, 0.9, 0, -1, 0.9, 0, -1, -0.9, 0.07, -1, -0.9, 0, -1, -0.9, 0.07, 1, -0.9, 0, 1, -1, 0.07, 1, -1, 0.07, 1, -0.9, 0, 1, -1, 0, 1, 0.9, 0.07, -1, 0.9, 0, -1, 1, 0.07, -1, 1, 0.07, -1, 0.9, 0, -1, 1, 0, -1, -0.9, 0.07, 1, -1, 0.07, 1, -0.93, 0.1, 1, -0.93, 0.1, 1, -1, 0.07, 1, -1, 0.1, 1, -1, 0.1, -1, -0.93, 0.1, -1, -1, 0.1, 1, -1, 0.1, 1, -0.93, 0.1, -1, -0.93, 0.1, 1, 1, 0.07, -1, 1, 0.07, 1, 1, 0.1, -1, 1, 0.1, -1, 1, 0.07, 1, 1, 0.1, 1, 0.9, 0.07, 1, 0.9, 0.07, -1, 0.93, 0.1, 1, 0.93, 0.1, 1, 0.9, 0.07, -1, 0.93, 0.1, -1, -1, 0.07, 1, -1, 0.07, -1, -1, 0.1, 1, -1, 0.1, 1, -1, 0.07, -1, -1, 0.1, -1, 1, 0.1, 1, 1, 0.07, 1, 0.93, 0.1, 1, 0.93, 0.1, 1, 1, 0.07, 1, 0.9, 0.07, 1, 0.9, 0.07, -1, 0.9, 0.07, 1, -0.9, 0.07, -1, -0.9, 0.07, -1, 0.9, 0.07, 1, -0.9, 0.07, 1, 0.02, 0.073, -0.9, 0.02, 0.073, -0.7, -0.02, 0.073, -0.9, -0.02, 0.073, -0.9, 0.02, 0.073, -0.7, -0.02, 0.073, -0.7, -0.58, 0.073, -1, -0.58, 0.073, 1, -0.62, 0.073, -1, -0.62, 0.073, -1, -0.58, 0.073, 1, -0.62, 0.073, 1, 0.62, 0.073, -1, 0.62, 0.073, 1, 0.58, 0.073, -1, 0.58, 0.073, -1, 0.62, 0.073, 1, 0.58, 0.073, 1, 0.02, 0.073, -0.5, 0.02, 0.073, -0.3, -0.02, 0.073, -0.5, -0.02, 0.073, -0.5, 0.02, 0.073, -0.3, -0.02, 0.073, -0.3, 0.02, 0.073, -0.1, 0.02, 0.073, 0.1, -0.02, 0.073, -0.1, -0.02, 0.073, -0.1, 0.02, 0.073, 0.1, -0.02, 0.073, 0.1, 0.02, 0.073, 0.3, 0.02, 0.073, 0.5, -0.02, 0.073, 0.3, -0.02, 0.073, 0.3, 0.02, 0.073, 0.5, -0.02, 0.073, 0.5, 0.02, 0.073, 0.7, 0.02, 0.073, 0.9, -0.02, 0.073, 0.7, -0.02, 0.073, 0.7, 0.02, 0.073, 0.9, -0.02, 0.073, 0.9)
@@ -151,6 +151,9 @@ albedo_color = Color(0.780392, 0.423529, 0.239216, 1)
 [node name="Level1" type="Node3D"]
 script = SubResource("GDScript_kvf75")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j76dv")
+
 [node name="sun" type="MeshInstance3D" parent="."]
 transform = Transform3D(32.6, 0, 0, 0, 32.6, 0, 0, 0, 32.6, 36.8687, 425.551, 39.8706)
 cast_shadow = 0
@@ -160,9 +163,6 @@ mesh = SubResource("SphereMesh_15ikx")
 transform = Transform3D(26.91, 0, 0, 0, 26.91, 0, 0, 0, 26.91, 35.5098, 412.624, 39.633)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_6asot")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_j76dv")
 
 [node name="Grass" parent="." instance=ExtResource("1_sgfud")]
 
@@ -345,7 +345,7 @@ shape = SubResource("ConcavePolygonShape3D_hcbdw")
 script = SubResource("GDScript_lmhw6")
 
 [node name="Tree1" type="Node3D" parent="Trees"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.5, -0.5)
 
 [node name="Debug" type="MeshInstance3D" parent="Trees/Tree1"]
 mesh = SubResource("CylinderMesh_s5uwe")
@@ -3057,7 +3057,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.159
 mesh = SubResource("CylinderMesh_s5uwe")
 
 [node name="invWalls" type="Node3D" parent="."]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.4658, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="invWalls"]
 transform = Transform3D(16.5856, 0, 0, 0, -4.37114e-08, 6.56565, 0, -1, -2.86994e-07, 0, 5, -3.28239)
