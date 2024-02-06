@@ -242,7 +242,7 @@ func spawn():
 	var cube = preload(\"res://Scenes/door.tscn\")
 	randomize()
 	posTree = Vector3(0,0,0)
-	print_debug(\"spawn\")
+	#print_debug(\"spawn\")
 	for i in self.get_children():
 		self.remove_child(i)
 		i.queue_free()

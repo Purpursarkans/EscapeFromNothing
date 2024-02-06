@@ -85,11 +85,11 @@ func _process(delta):
 		$\"Spawnpoint\".position = $End.position+Vector3(0,3,0)
 		$Spawnpoint/Player.position = Vector3(0,0,0)
 		SetEnd = false
-		print_debug(\"tp1\")
+		#print_debug(\"tp1\")
 		
 	if $Spawnpoint/Player.position.y < -10 && CanTP:
 		$Spawnpoint/Player.position = Vector3(0,0,0)
-		print_debug(\"tp2\")
+		#print_debug(\"tp2\")
 		
 	if Input.is_action_just_pressed(\"respawn\"):
 		$Spawnpoint/Player.position = Vector3(0,0,0)
