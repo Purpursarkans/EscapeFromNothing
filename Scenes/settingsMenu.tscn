@@ -21,9 +21,11 @@ func _on_spin_box_value_changed(value):
 	
 func _ready():
 	$Sensivity/SpinBox.value = G.Sensivity
+	$Sensivity/HScrollBar.value = G.Sensivity
 	$VSync.button_pressed = G.vsync
 	$CheckBox.button_pressed = G.FullScreen
-
+	$Volume/SpinBoxVolume.value = G.Volume
+	$Volume/HScrollBarVolume.value = G.Volume
 
 
 func _on_h_scroll_bar_value_changed(value):
@@ -40,6 +42,22 @@ func _on_v_sync_toggled(toggled_on):
 func _on_check_box_toggled(toggled_on):
 	G.FullScreen = toggled_on
 	G.ChangeScreen()
+
+
+func _on_spin_box_volume_value_changed(value):
+	G.Volume = value
+	$Volume/SpinBoxVolume.value = G.Volume
+	$Volume/HScrollBarVolume.value = G.Volume
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(\"Master\"),value)
+	pass # Replace with function body.
+
+
+func _on_h_scroll_bar_volume_value_changed(value):
+	G.Volume = value
+	$Volume/SpinBoxVolume.value = G.Volume
+	$Volume/HScrollBarVolume.value = G.Volume
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(\"Master\"),value)
+	pass # Replace with function body.
 "
 
 [node name="SettingsMenu" type="Control"]
@@ -95,6 +113,50 @@ step = 0.1
 value = 10.0
 metadata/_edit_use_anchors_ = true
 
+[node name="Volume" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="SpinBoxVolume" type="SpinBox" parent="Volume"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.293663
+anchor_top = 0.0962963
+anchor_right = 0.365766
+anchor_bottom = 0.153395
+offset_right = -0.00050354
+min_value = -30.0
+max_value = 20.0
+step = 0.1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Volume"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.286719
+anchor_top = 0.05
+anchor_right = 0.372657
+anchor_bottom = 0.102469
+text = "Volume (db)"
+metadata/_edit_use_anchors_ = true
+
+[node name="HScrollBarVolume" type="HScrollBar" parent="Volume"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.373177
+anchor_top = 0.0964506
+anchor_right = 0.534896
+anchor_bottom = 0.153395
+mouse_default_cursor_shape = 13
+min_value = -30.0
+max_value = 20.0
+step = 0.1
+metadata/_edit_use_anchors_ = true
+
 [node name="Back" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -131,6 +193,8 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="value_changed" from="Sensivity/SpinBox" to="." method="_on_spin_box_value_changed"]
 [connection signal="value_changed" from="Sensivity/HScrollBar" to="." method="_on_h_scroll_bar_value_changed"]
+[connection signal="value_changed" from="Volume/SpinBoxVolume" to="." method="_on_spin_box_volume_value_changed"]
+[connection signal="value_changed" from="Volume/HScrollBarVolume" to="." method="_on_h_scroll_bar_volume_value_changed"]
 [connection signal="button_down" from="Back" to="." method="_on_back_button_down"]
 [connection signal="toggled" from="VSync" to="." method="_on_v_sync_toggled"]
 [connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]

@@ -6,8 +6,11 @@ var Sensivity : float = 10
 var FixSensivity : float = 0.0001
 var vsync : bool = false
 var FullScreen : bool = true
+var Volume : float = 0
+
 
 func _ready():
+	
 	vsync = DisplayServer.window_get_vsync_mode()
 	FullScreen = DisplayServer.window_get_mode()
 	audio1()
